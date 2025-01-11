@@ -59,8 +59,8 @@ body.dark-mode {
 .icon {
     position: absolute;
     top: 20px;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     filter: invert(0%);
 }
@@ -68,7 +68,7 @@ body.dark-mode .icon {
     filter: invert(100%);
 }
 .signup-icon {
-    right: 60px;
+    right: 50px;
 }
 .dark-mode-icon {
     right: 20px;
@@ -80,8 +80,8 @@ body.dark-mode .icon {
     cursor: pointer;
 }
 .hamburger-icon {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     filter: invert(0%);
 }
 body.dark-mode .hamburger-icon {
@@ -133,7 +133,7 @@ body.dark-mode .hamburger-icon {
     margin-top: 10px;
 }
 .social-icons a {
-    margin: 0 10px;
+    margin: 0 5px;
     display: inline-block;
     transition: transform 0.3s, filter 0.5s;
 }
@@ -141,8 +141,8 @@ body.dark-mode .hamburger-icon {
     transform: scale(1.1);
 }
 .social-icons img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     filter: invert(0%);
 }
 body.dark-mode .social-icons img {
@@ -153,8 +153,8 @@ body.dark-mode .social-icons img {
         font-size: 1.5em;
     }
     .icon {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
     }
     .nav-menu {
         width: 100px;
@@ -164,8 +164,8 @@ body.dark-mode .social-icons img {
         padding: 8px 16px;
     }
     .social-icons img {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
     }
 }
 @media (min-width: 601px) {
