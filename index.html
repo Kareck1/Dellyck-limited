@@ -22,6 +22,35 @@
         </div>
     </div>
 
+    <div class="content">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'Home')">Home</button>
+            <button class="tab-button" onclick="openTab(event, 'Services')">Services</button>
+            <button class="tab-button" onclick="openTab(event, 'About')">About Us</button>
+            <button class="tab-button" onclick="openTab(event, 'Contact')">Contact</button>
+        </div>
+        
+        <div id="Home" class="tab-content active">
+            <h2>Welcome to Dellyck Limited</h2>
+            <p>Dellyck Limited, headquartered in Kigali, Rwanda, since 2021, is a versatile enterprise with diverse offerings spanning IT support, web design, language education, and innovative HR consulting services. We excel in conceptualizing custom IT solutions, ensuring a dynamic digital presence, optimizing workforce performance, and executing impactful events, all through our commitment to cutting-edge technology and industry standards. Our mission is to empower businesses with a comprehensive suite of services, fostering efficiency, growth, and a competitive advantage in today's ever-evolving digital landscape.</p>
+        </div>
+
+        <div id="Services" class="tab-content">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of services including IT support, web design, language education, innovative HR consulting, software creation, digital marketing, and more. </p>
+        </div>
+
+        <div id="About" class="tab-content">
+            <h2>About Us</h2>
+            <p>Dellyck Limited was founded in 2021 and is headquartered in Kigali, Rwanda. We specialize in IT solutions, web design, language education, and HR consulting services.</p>
+        </div>
+
+        <div id="Contact" class="tab-content">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us via email at info@dellycklimited.com or call us at +250 123 456 789.</p>
+        </div>
+    </div>
+
     <div class="footer">
         &copy; 2025 Dellyck Limited. All rights reserved.
         <div class="social-icons">
@@ -70,6 +99,20 @@
                 closeMenu();
             }
         });
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
     </script>
 </body>
 </html>
