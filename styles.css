@@ -41,9 +41,8 @@ body.dark-mode {
     height: auto;
 }
 .spinning-logo {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
+    width: 50px;
+    height: 50px;
     animation: spin 10s linear infinite;
     vertical-align: middle;
 }
@@ -148,7 +147,6 @@ body.dark-mode .hamburger-icon {
 body.dark-mode .social-icons img {
     filter: invert(100%);
 }
-/* For small devices (phones, 600px and down) */
 @media (max-width: 600px) {
     .banner h1 {
         font-size: 1.5em;
@@ -169,25 +167,23 @@ body.dark-mode .social-icons img {
         height: 20px;
     }
 }
-
-/* For medium devices (tablets, 600px and up) */
-@media (min-width: 600px) {
+@media (min-width: 601px) {
+    .banner {
+        padding: 40px;
+    }
     .banner h1 {
         font-size: 2.5em;
     }
-    .icon {
-        width: 35px;
-        height: 35px;
+    .banner p {
+        margin: 20px 0;
     }
     .nav-menu {
-        width: 150px;
-        height: 150px;
+        padding: 20px;
     }
     .nav-menu a {
         padding: 12px 24px;
     }
-    .social-icons img {
-        width: 25px;
-        height: 25px;
+    .footer {
+        padding: 20px;
     }
 }
