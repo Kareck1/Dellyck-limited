@@ -1,62 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dellyck Limited</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="banner">
-        <h1 class="animation" onclick="location.reload();">Dellyck Limited<img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo"></h1>
-        <p>Empowering Your Business with Innovative Solutions</p>
-        <img src="path_to_your_image.jpg" alt="Dellyck Limited">
-        <img src="https://cdn-icons-png.flaticon.com/128/8238/8238158.png" alt="Sign Up" class="icon signup-icon" onclick="window.location.href='signup.html'">
-        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon" onclick="toggleDarkMode()">
-        <div class="hamburger" onclick="toggleMenu()">
-            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <a href="about.html">About Us</a>
-            <a href="services.html">Our Services</a>
-            <a href="contact.html">Contact Us</a>
-        </div>
-    </div>
-
-    <div class="footer">
-        &copy; 2025 Dellyck Limited. All rights reserved.
-        <div class="social-icons">
-            <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram">
-            </a>
-            <a href="https://www.twitter.com/jerrick_kent/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/5968/5968958.png" alt="Twitter">
-            </a>
-            <a href="https://www.linkedin.com/in/derrickk250/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/3116/3116491.png" alt="TikTok">
-            </a>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("navMenu");
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
-            }
-        }
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            var elements = document.querySelectorAll('.banner, .footer, .nav-menu, .icon, .hamburger-icon, .social-icons img');
-            elements.forEach(function(element) {
-                element.classList.toggle('dark-mode');
-            });
-        }
-    </script>
-</body>
-</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+.banner {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: background-color 0.5s;
+}
+.banner.dark-mode {
+    background-color: #444;
+}
+.banner h1 {
+    margin: 0;
+    font-size: 2.5em;
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+    animation: shake 0.5s;
+    animation-iteration-count: 6;
+}
+.banner p {
+    margin: 10px 0;
+    color: inherit;
+}
+.banner img {
+    max-width: 100%;
+    height: auto;
+}
+.spinning-logo {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    animation: spin 10s linear infinite;
+    vertical-align: middle;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+.icon {
+    position: absolute;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    filter: invert(0%);
+}
+body.dark-mode .icon {
+    filter: invert(100%);
+}
+.signup-icon {
+    right: 50px;
+}
+.dark-mode-icon {
+    right: 20px;
+}
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+.hamburger-icon {
+    width: 25px;
+    height: 25px;
+    filter: invert(0%);
+}
+body.dark-mode .hamburger-icon {
+    filter: invert(100%);
+}
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s, color 0.5s;
+    animation: expandCircle 0.5s forwards;
+}
+.nav-menu.dark-mode {
+    background-color: #444;
+}
+@keyframes expandCircle {
+    from { width: 0; height: 0; }
+    to { width: 150px; height: 150px; }
+}
+.nav-menu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: color 0.5s;
+}
+.footer {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    transition: background-color 0.5s, color 0.5s;
+}
+.footer.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+.social-icons {
+    margin-top: 10px;
+}
+.social-icons a {
+    margin: 0 5px;
+    display: inline-block;
+    transition: transform 0.3s, filter 0.5s;
+}
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    filter: invert(0%);
+}
+body.dark-mode .social-icons img {
+    filter: invert(100%);
+}
+@media (max-width: 600px) {
+    .banner h1 {
+        font-size: 1.5em;
+    }
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+    .nav-menu {
+        width: 100px;
+        height: 100px;
+    }
+    .nav-menu a {
+        padding: 8px 16px;
+    }
+    .social-icons img {
+        width: 15px;
+        height: 15px;
+    }
+}
+@media (min-width: 601px) {
+    .banner {
+        padding: 40px;
+    }
+    .banner h1 {
+        font-size: 2.5em;
+    }
+    .banner p {
+        margin: 20px 0;
+    }
+    .nav-menu {
+        padding: 20px;
+    }
+    .nav-menu a {
+        padding: 12px 24px;
+    }
+    .footer {
+        padding: 20px;
+    }
+}
