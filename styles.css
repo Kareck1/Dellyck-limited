@@ -188,3 +188,34 @@ body.dark-mode .social-icons img {
         padding: 20px;
     }
 }
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+.scrollable-tabs {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+}
+.tab-button.active, .tab-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+.tab-content {
+    display: none;
+    text-align: left;
+}
+.tab-content.active {
+    display: block;
+}
