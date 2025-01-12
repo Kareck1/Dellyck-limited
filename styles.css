@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
 }
 body.dark-mode {
     background-color: #333;
@@ -19,6 +21,8 @@ body.dark-mode {
     text-align: center;
     position: relative;
     transition: background-color 0.5s;
+    width: 100%;
+    box-sizing: border-box;
 }
 .banner.dark-mode {
     background-color: #444;
@@ -166,6 +170,17 @@ body.dark-mode .social-icons img {
     .social-icons img {
         width: 20px;
         height: 20px;
+    }
+    .scrollable-tabs {
+        flex-direction: column;
+    }
+    .tab-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .tab-button img {
+        width: 40px;
+        height: 40px;
     }
 }
 @media (min-width: 601px) {
