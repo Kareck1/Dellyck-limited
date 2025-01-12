@@ -23,74 +23,49 @@
     </div>
 
     <div class="content">
-        <div class="cards-container">
+        <div class="scrollable-cards-container">
             <div class="card" id="ITSupport">
                 <div class="card-content">
                     <h3>IT Support</h3>
                     <p>We provide comprehensive IT support to ensure your business operations run smoothly.</p>
-                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
             <div class="card" id="WebDesign">
                 <div class="card-content">
                     <h3>Web Design</h3>
                     <p>We create visually appealing and user-friendly websites to enhance your digital presence.</p>
-                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
             <div class="card" id="LanguageEducation">
                 <div class="card-content">
                     <h3>Language Education</h3>
                     <p>We offer language education services to help you communicate effectively in different languages.</p>
-                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
             <div class="card" id="HRConsulting">
                 <div class="card-content">
                     <h3>HR Consulting</h3>
                     <p>We provide innovative HR consulting services to optimize your workforce performance.</p>
-                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
             <div class="card" id="SoftwareCreation">
                 <div class="card-content">
                     <h3>Software Creation</h3>
                     <p>We specialize in creating custom software solutions to meet your business needs.</p>
-                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
             <div class="card" id="DigitalMarketing">
                 <div class="card-content">
                     <h3>Digital Marketing</h3>
                     <p>We offer digital marketing services to help you reach a wider audience and grow your business.</p>
-                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
             <div class="card" id="EventPlanning">
                 <div class="card-content">
                     <h3>Event Planning</h3>
                     <p>We execute impactful events to help you achieve your business goals.</p>
-                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        &copy; 2025 Dellyck Limited. All rights reserved.
-        <div class="social-icons">
-            <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram">
-            </a>
-            <a href="https://www.twitter.com/jerrick_kent/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/5968/5968958.png" alt="Twitter">
-            </a>
-            <a href="https://www.linkedin.com/in/derrickk250/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/3116/3116491.png" alt="TikTok">
-            </a>
         </div>
     </div>
 
@@ -111,7 +86,7 @@
 
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
-            var elements = document.querySelectorAll('.banner, .footer, .nav-menu, .icon, .hamburger-icon, .social-icons img');
+            var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .social-icons img');
             elements.forEach(function(element) {
                 element.classList.toggle('dark-mode');
             });
