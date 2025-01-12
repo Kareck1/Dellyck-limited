@@ -106,22 +106,28 @@
         const scrollContainer = document.getElementById('scrollable-cards-container');
 
         let isScrolling;
+        let pauseScroll = false;
+
         scrollContainer.addEventListener('scroll', () => {
             window.clearTimeout(isScrolling);
+            pauseScroll = true;
             isScrolling = setTimeout(() => {
+                pauseScroll = false;
                 if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
                     scrollContainer.scrollLeft = 1; // Small offset to prevent snapping back too soon
                 } else if (scrollContainer.scrollLeft === 0) {
                     scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth - 1; // Small offset
                 }
-            }, 100);
+            }, 2000); // Pause for 2 seconds
         });
 
         // Automatic scrolling
-        let autoScroll = setInterval(() => {
-            scrollContainer.scrollLeft += 1;
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                scrollContainer.scrollLeft = 0;
+        setInterval(() => {
+            if (!pauseScroll) {
+                scrollContainer.scrollLeft += 1;
+                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                    scrollContainer.scrollLeft = 0;
+                }
             }
         }, 50); // Adjust the speed of automatic scrolling
 
@@ -135,12 +141,6 @@
         scrollContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleGesture();
-            autoScroll = setInterval(() => { // Resume automatic scrolling
-                scrollContainer.scrollLeft += 1;
-                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                    scrollContainer.scrollLeft = 0;
-                }
-            }, 50); 
         });
 
         function handleGesture() {
@@ -154,18 +154,11 @@
 
         // Enable mouse wheel scrolling
         scrollContainer.addEventListener('wheel', (e) => {
-            clearInterval(autoScroll); // Stop automatic scrolling on user interaction
             if (e.deltaY > 0) {
                 scrollContainer.scrollLeft += 100; // Scroll forward
             } else {
                 scrollContainer.scrollLeft -= 100; // Scroll backward
             }
-            autoScroll = setInterval(() => { // Resume automatic scrolling
-                scrollContainer.scrollLeft += 1;
-                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                    scrollContainer.scrollLeft = 0;
-                }
-            }, 50);
         });
     </script>
 </body>
