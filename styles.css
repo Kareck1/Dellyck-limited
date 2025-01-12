@@ -135,10 +135,24 @@ body.dark-mode .hamburger-icon {
 }
 .scrollable-cards-container {
     display: flex;
-    overflow-x: auto; /* Make the container horizontally scrollable */
-    gap: 20px;
+    overflow-x: hidden; /* Hide the scrollbar */
+    gap: 10px; /* Reduce the gap between cards */
     padding: 20px;
-    scroll-snap-type: x mandatory; /* Snap scrolling effect */
+    position: relative;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7)); /* Adjust based on the card width and number of cards */
+    }
+}
+
+.scrollable-cards {
+    display: flex;
+    animation: scroll 20s linear infinite;
 }
 
 .card {
@@ -146,13 +160,12 @@ body.dark-mode .hamburger-icon {
     background-image: url('https://img.freepik.com/free-photo/website-html-code-browser-view-printed-white-paper-closeup-view_211682-164.jpg');
     background-size: cover;
     background-position: center;
-    width: 300px;
-    height: 400px;
+    width: 200px; /* Make the card smaller */
+    height: 250px; /* Make the card smaller */
     position: relative;
-    border-radius: 20px; /* Rounded corners */
+    border-radius: 10px; /* Rounded corners */
     overflow: hidden;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    scroll-snap-align: start; /* Align at the start of the container */
 }
 
 .card:hover {
@@ -166,18 +179,19 @@ body.dark-mode .hamburger-icon {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 20px;
+    padding: 10px; /* Adjust the padding to fit smaller cards */
     text-align: center;
     transition: background 0.5s ease-in-out;
 }
 .card-content h3 {
     margin-top: 0;
+    font-size: 1.2em; /* Adjust the font size for smaller cards */
 }
 .card .btn {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 10px; /* Adjust the padding for smaller buttons */
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.3s ease;
