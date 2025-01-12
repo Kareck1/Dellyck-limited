@@ -136,12 +136,19 @@ body.dark-mode .hamburger-icon {
 .cards-title {
     text-align: center;
     margin: 20px;
-    font-size: 1.5em;
+    font-size: 2em;
     color: #333;
+    animation: fadeIn 2s;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .scrollable-cards-container {
     display: flex;
-    overflow-x: hidden; /* Hide the scrollbar */
+    overflow-x: auto; /* Allow manual horizontal scrolling */
     padding: 20px;
     position: relative;
     scroll-behavior: smooth; /* Smooth scrolling */
@@ -151,12 +158,22 @@ body.dark-mode .hamburger-icon {
 .scrollable-cards {
     display: flex;
     gap: 20px; /* Add space between cards */
-    animation: scroll 30s linear infinite; /* Automatic sliding animation */
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-170px * 7)); } /* Adjust based on the card width and number of cards */
+.forward-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.forward-icon:hover {
+    opacity: 1;
 }
 
 .card {
