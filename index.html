@@ -23,7 +23,7 @@
     </div>
 
     <div class="content">
-        <h2 class="cards-title">Our Services</h2>
+        <h2 class="cards-title">Explore Our Services</h2>
         <div class="scrollable-cards-container" id="scrollable-cards-container">
             <div class="scrollable-cards">
                 <div class="card" id="ITSupport">
@@ -62,6 +62,7 @@
                     </div>
                 </div>
             </div>
+            <img src="https://cdn.iconscout.com/icon/free/png-512/free-forward-icon-download-in-svg-png-gif-file-formats--arrow-next-right-user-interface-pack-icons-1516139.png?f=webp&w=256" alt="Next" class="forward-icon" onclick="scrollForward()">
         </div>
     </div>
 
@@ -123,6 +124,10 @@
             if (touchEndX > touchStartX) {
                 scrollContainer.scrollLeft -= 100; // Scroll backward
             }
+        }
+
+        function scrollForward() {
+            scrollContainer.scrollLeft += 300; // Adjust this value to control the scroll distance
         }
     </script>
 </body>
