@@ -171,14 +171,14 @@ body.dark-mode .social-icons img {
         width: 20px;
         height: 20px;
     }
-    .scrollable-tabs {
+    .cards-container {
         flex-direction: column;
     }
-    .tab-button {
+    .card {
         width: 100%;
         margin-bottom: 10px;
     }
-    .tab-button img {
+    .card img {
         width: 40px;
         height: 40px;
     }
@@ -208,17 +208,15 @@ body.dark-mode .social-icons img {
     padding: 20px;
     text-align: center;
 }
-.scrollable-tabs {
+.cards-container {
     display: flex;
-    overflow-x: auto;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ccc;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
-.tab-button {
-    flex: 0 0 auto;
+.card {
+    width: 150px;
     padding: 20px;
-    margin: 0 5px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -226,23 +224,24 @@ body.dark-mode .social-icons img {
     transition: background-color 0.5s, color 0.5s;
     text-align: center;
 }
-.tab-button.active, .tab-button:hover {
+.card:hover {
     background-color: #007bff;
     color: #fff;
 }
-.tab-button img {
+.card img {
     width: 50px;
     height: 50px;
     display: block;
     margin: 0 auto 10px;
 }
-.tab-button span {
-    display: block;
+.card h3 {
+    margin: 0;
+    font-size: 1em;
 }
-.tab-content {
+.content-section {
     display: none;
     text-align: left;
 }
-.tab-content.active {
+.content-section.active {
     display: block;
 }
