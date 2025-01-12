@@ -171,17 +171,6 @@ body.dark-mode .social-icons img {
         width: 20px;
         height: 20px;
     }
-    .scrollable-cards-container {
-        flex-direction: column;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 10px;
-    }
-    .card {
-        width: 100%;
-        margin-bottom: 10px;
-        display: inline-block;
-    }
 }
 @media (min-width: 601px) {
     .banner {
@@ -207,44 +196,6 @@ body.dark-mode .social-icons img {
     flex: 1;
     padding: 20px;
     text-align: center;
-}
-.scrollable-cards-container {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    max-height: 80vh;
-    margin-bottom: 20px;
-}
-.card {
-    padding: 20px;
-    background-color: #fff;
-    background-image: url('https://lh3.googleusercontent.com/p/AF1QipPST2Tu1olrGXY5MIe_q3A2u01AyPhFhWSejXWU=s680-w680-h510');
-    background-size: cover;
-    background-position: center;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.5s, color 0.5s;
-    text-align: center;
-    position: relative;
-    color: #fff;
-    margin-bottom: 10px;
-}
-.card:hover {
-    background-color: rgba(0, 123, 255, 0.7);
-    color: #fff;
-}
-.card h3 {
-    margin: 0;
-    font-size: 1em;
-}
-.card .arrow {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5em;
-    color: inherit;
 }
 .content-section {
     display: none;
