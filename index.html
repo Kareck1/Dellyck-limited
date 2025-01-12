@@ -95,42 +95,13 @@
             }
         });
 
-        // Function to make the scrollable cards loop seamlessly and allow user interaction
-        const scrollContainer = document.getElementById('scrollable-cards-container');
-        const scrollCards = document.querySelector('.scrollable-cards');
-
-        let isScrolling;
-        let pauseScroll = false;
-
-        scrollContainer.addEventListener('scroll', () => {
-            window.clearTimeout(isScrolling);
-            pauseScroll = true;
-            isScrolling = setTimeout(() => {
-                pauseScroll = false;
-                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                    scrollContainer.scrollLeft = 1; // Small offset to prevent snapping back too soon
-                } else if (scrollContainer.scrollLeft === 0) {
-                    scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth - 1; // Small offset
-                }
-            }, 2000); // Pause for 2 seconds
-        });
-
-        // Automatic scrolling
-        setInterval(() => {
-            if (!pauseScroll) {
-                scrollContainer.scrollLeft += 1;
-                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                    scrollContainer.scrollLeft = 0;
-                }
-            }
-        }, 50); // Adjust the speed of automatic scrolling
-
         // Enable touch and cursor scrolling
+        const scrollContainer = document.getElementById('scrollable-cards-container');
+
         let touchStartX = 0;
         let touchEndX = 0;
         scrollContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
-            clearInterval(autoScroll); // Stop automatic scrolling on user interaction
         });
         scrollContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
