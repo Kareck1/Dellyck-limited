@@ -23,6 +23,7 @@
     </div>
 
     <div class="content">
+        <h2 class="cards-title">Our Services</h2>
         <div class="scrollable-cards-container" id="scrollable-cards-container">
             <div class="scrollable-cards">
                 <div class="card" id="ITSupport">
@@ -97,6 +98,13 @@
 
         // Enable touch and cursor scrolling
         const scrollContainer = document.getElementById('scrollable-cards-container');
+        scrollContainer.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                scrollContainer.scrollLeft += 100; // Scroll forward
+            } else {
+                scrollContainer.scrollLeft -= 100; // Scroll backward
+            }
+        });
 
         let touchStartX = 0;
         let touchEndX = 0;
@@ -116,15 +124,6 @@
                 scrollContainer.scrollLeft -= 100; // Scroll backward
             }
         }
-
-        // Enable mouse wheel scrolling
-        scrollContainer.addEventListener('wheel', (e) => {
-            if (e.deltaY > 0) {
-                scrollContainer.scrollLeft += 100; // Scroll forward
-            } else {
-                scrollContainer.scrollLeft -= 100; // Scroll backward
-            }
-        });
     </script>
 </body>
 </html>
