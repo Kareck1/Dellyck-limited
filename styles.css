@@ -133,50 +133,52 @@ body.dark-mode .hamburger-icon {
     text-align: center;
     transition: color 1s ease-in-out;
 }
-.footer {
-    background-color: #f5f5f5;
-    color: #333;
-    padding: 10px;
-    text-align: center;
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    background-image: url('https://img.freepik.com/free-photo/website-html-code-browser-view-printed-white-paper-closeup-view_211682-164.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.card-content {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    transition: background-color 1s ease-in-out, color 1s ease-in-out;
-}
-.footer.dark-mode {
-    background-color: #333;
-    color: #f5f5f5;
-}
-.social-icons {
-    margin-top: 10px;
-}
-.social-icons a {
-    margin: 0 5px;
-    display: inline-block;
-    transition: transform 0.3s, filter 1s ease-in-out;
-}
-.social-icons a:hover {
-    transform: scale(1.1);
-}
-.social-icons img {
-    width: 25px;
-    height: 25px;
-    filter: invert(0%);
-    transition: filter 1s ease-in-out;
-}
-body.dark-mode .social-icons img {
-    filter: invert(100%);
-}
-.content {
-    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 20px;
     text-align: center;
-    transition: color 1s ease-in-out;
+    transition: background 0.5s ease-in-out;
 }
-.content-section {
-    display: none;
-    text-align: left;
+.card-content h3 {
+    margin-top: 0;
 }
-.content-section.active {
-    display: block;
+.card .btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.card .btn:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive design for various screen sizes */
@@ -201,6 +203,10 @@ body.dark-mode .social-icons img {
     }
     .footer {
         padding: 15px;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -250,4 +256,17 @@ body.dark-mode .social-icons img {
     .footer {
         padding: 20px;
     }
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    transition: color 1s ease-in-out;
+}
+.content-section {
+    display: none;
+    text-align: left;
+}
+.content-section.active {
+    display: block;
 }
