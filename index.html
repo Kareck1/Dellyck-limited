@@ -23,47 +23,68 @@
     </div>
 
     <div class="content">
-        <div class="scrollable-tabs">
-            <button class="tab-button active" onclick="openTab(event, 'ITSupport')">IT Support</button>
-            <button class="tab-button" onclick="openTab(event, 'WebDesign')">Web Design</button>
-            <button class="tab-button" onclick="openTab(event, 'LanguageEducation')">Language Education</button>
-            <button class="tab-button" onclick="openTab(event, 'HRConsulting')">HR Consulting</button>
-            <button class="tab-button" onclick="openTab(event, 'SoftwareCreation')">Software Creation</button>
-            <button class="tab-button" onclick="openTab(event, 'DigitalMarketing')">Digital Marketing</button>
-            <button class="tab-button" onclick="openTab(event, 'EventPlanning')">Event Planning</button>
+        <div class="cards-container">
+            <div class="card" onclick="openContent('ITSupport')">
+                <img src="https://cdn-icons-png.flaticon.com/128/1025/1025683.png" alt="IT Support">
+                <h3>IT Support</h3>
+            </div>
+            <div class="card" onclick="openContent('WebDesign')">
+                <img src="https://cdn-icons-png.flaticon.com/128/1040/1040259.png" alt="Web Design">
+                <h3>Web Design</h3>
+            </div>
+            <div class="card" onclick="openContent('LanguageEducation')">
+                <img src="https://cdn-icons-png.flaticon.com/128/2040/2040647.png" alt="Language Education">
+                <h3>Language Education</h3>
+            </div>
+            <div class="card" onclick="openContent('HRConsulting')">
+                <img src="https://cdn-icons-png.flaticon.com/128/3462/3462273.png" alt="HR Consulting">
+                <h3>HR Consulting</h3>
+            </div>
+            <div class="card" onclick="openContent('SoftwareCreation')">
+                <img src="https://cdn-icons-png.flaticon.com/128/2654/2654467.png" alt="Software Creation">
+                <h3>Software Creation</h3>
+            </div>
+            <div class="card" onclick="openContent('DigitalMarketing')">
+                <img src="https://cdn-icons-png.flaticon.com/128/1998/1998553.png" alt="Digital Marketing">
+                <h3>Digital Marketing</h3>
+            </div>
+            <div class="card" onclick="openContent('EventPlanning')">
+                <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" alt="Event Planning">
+                <h3>Event Planning</h3>
+            </div>
         </div>
 
-        <div id="ITSupport" class="tab-content active">
+        <div id="ITSupport" class="content-section">
             <h2>IT Support</h2>
             <p>We provide comprehensive IT support to ensure your business operations run smoothly.</p>
         </div>
 
-        <div id="WebDesign" class="tab-content">
+        <div id="WebDesign" class="content-section">
             <h2>Web Design</h2>
             <p>We create visually appealing and user-friendly websites to enhance your digital presence.</p>
         </div>
 
-        <div id="LanguageEducation" class="tab-content">
+        <div id="LanguageEducation" class="content-section">
             <h2>Language Education</h2>
             <p>We offer language education services to help you communicate effectively in different languages.</p>
         </div>
 
-        <div id="HRConsulting" class="tab-content">
+        <div id="HRConsulting" class="content-section">
             <h2>HR Consulting</h2>
             <p>We provide innovative HR consulting services to optimize your workforce performance.</p>
         </div>
 
-        <div id="SoftwareCreation" class="tab-content">
+        <div id="SoftwareCreation" class="content-section">
             <h2>Software Creation</h2>
             <p>We specialize in creating custom software solutions to meet your business needs.</p>
         </div>
 
-        <div id="DigitalMarketing" class="tab-content">
+        <div id="DigitalMarketing" class="content-section">
             <h2>Digital Marketing</h2>
             <p>We offer digital marketing services to help you reach a wider audience and grow your business.</p>
         </div>
 
-        <div id="EventPlanning" class="tab-content">
+        <div id="EventPlanning" class="content-section">
             <h2>Event Planning</h2>
             <p>We execute impactful events to help you achieve your business goals.</p>
         </div>
@@ -118,19 +139,22 @@
             }
         });
 
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+        function openContent(contentId) {
+            var i, contentSections;
+            contentSections = document.getElementsByClassName("content-section");
+            for (i = 0; i < contentSections.length; i++) {
+                contentSections[i].style.display = "none";
             }
-            tablinks = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
+            document.getElementById(contentId).style.display = "block";
         }
+
+        // Initially hide all content sections except the first one
+        window.onload = function() {
+            var contentSections = document.getElementsByClassName("content-section");
+            for (var i = 1; i < contentSections.length; i++) {
+                contentSections[i].style.display = "none";
+            }
+        };
     </script>
 </body>
 </html>
