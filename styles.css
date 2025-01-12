@@ -144,8 +144,8 @@ body.dark-mode .hamburger-icon {
     background-image: url('https://img.freepik.com/free-photo/website-html-code-browser-view-printed-white-paper-closeup-view_211682-164.jpg');
     background-size: cover;
     background-position: center;
-    width: 300px;
-    height: 200px;
+    width: 260px; /* Adjusted width */
+    height: 320px; /* Adjusted height */
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -162,18 +162,19 @@ body.dark-mode .hamburger-icon {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     transition: background 0.5s ease-in-out;
 }
 .card-content h3 {
     margin-top: 0;
+    font-size: 1.2em; /* Adjusted font size */
 }
 .card .btn {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -205,8 +206,8 @@ body.dark-mode .hamburger-icon {
     transform: scale(1.1);
 }
 .social-icons img {
-    width: 25px;
-    height: 25px;
+    width: 20px; /* Adjusted icon size */
+    height: 20px; /* Adjusted icon size */
     filter: invert(0%);
     transition: filter 1s ease-in-out;
 }
@@ -231,8 +232,8 @@ body.dark-mode .social-icons img {
         padding: 8px 16px;
     }
     .social-icons img {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
     .footer {
         padding: 15px;
