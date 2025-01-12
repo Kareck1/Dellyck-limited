@@ -28,43 +28,36 @@
                 <div class="card" id="ITSupport">
                     <div class="card-content">
                         <h3>IT Support</h3>
-                        <p>We provide comprehensive IT support to ensure your business operations run smoothly.</p>
                     </div>
                 </div>
                 <div class="card" id="WebDesign">
                     <div class="card-content">
                         <h3>Web Design</h3>
-                        <p>We create visually appealing and user-friendly websites to enhance your digital presence.</p>
                     </div>
                 </div>
                 <div class="card" id="LanguageEducation">
                     <div class="card-content">
                         <h3>Language Education</h3>
-                        <p>We offer language education services to help you communicate effectively in different languages.</p>
                     </div>
                 </div>
                 <div class="card" id="HRConsulting">
                     <div class="card-content">
                         <h3>HR Consulting</h3>
-                        <p>We provide innovative HR consulting services to optimize your workforce performance.</p>
                     </div>
                 </div>
                 <div class="card" id="SoftwareCreation">
                     <div class="card-content">
                         <h3>Software Creation</h3>
-                        <p>We specialize in creating custom software solutions to meet your business needs.</p>
                     </div>
                 </div>
                 <div class="card" id="DigitalMarketing">
                     <div class="card-content">
                         <h3>Digital Marketing</h3>
-                        <p>We offer digital marketing services to help you reach a wider audience and grow your business.</p>
                     </div>
                 </div>
                 <div class="card" id="EventPlanning">
                     <div class="card-content">
                         <h3>Event Planning</h3>
-                        <p>We execute impactful events to help you achieve your business goals.</p>
                     </div>
                 </div>
             </div>
@@ -102,13 +95,42 @@
             }
         });
 
-        // Enable touch and cursor scrolling
+        // Function to make the scrollable cards loop seamlessly and allow user interaction
         const scrollContainer = document.getElementById('scrollable-cards-container');
+        const scrollCards = document.querySelector('.scrollable-cards');
 
+        let isScrolling;
+        let pauseScroll = false;
+
+        scrollContainer.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+            pauseScroll = true;
+            isScrolling = setTimeout(() => {
+                pauseScroll = false;
+                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                    scrollContainer.scrollLeft = 1; // Small offset to prevent snapping back too soon
+                } else if (scrollContainer.scrollLeft === 0) {
+                    scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth - 1; // Small offset
+                }
+            }, 2000); // Pause for 2 seconds
+        });
+
+        // Automatic scrolling
+        setInterval(() => {
+            if (!pauseScroll) {
+                scrollContainer.scrollLeft += 1;
+                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                    scrollContainer.scrollLeft = 0;
+                }
+            }
+        }, 50); // Adjust the speed of automatic scrolling
+
+        // Enable touch and cursor scrolling
         let touchStartX = 0;
         let touchEndX = 0;
         scrollContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            clearInterval(autoScroll); // Stop automatic scrolling on user interaction
         });
         scrollContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
