@@ -156,6 +156,11 @@ body.dark-mode .cards-title {
     position: relative;
     scroll-behavior: smooth; /* Smooth scrolling */
     width: 100%;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+}
+.scrollable-cards-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .scrollable-cards {
