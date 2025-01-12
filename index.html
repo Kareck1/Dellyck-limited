@@ -104,6 +104,15 @@
 
         // Function to make the scrollable cards loop seamlessly and allow user interaction
         const scrollContainer = document.getElementById('scrollable-cards-container');
+        const scrollCards = document.querySelector('.scrollable-cards');
+
+        scrollContainer.addEventListener('scroll', () => {
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                scrollContainer.scrollLeft = 0;
+            } else if (scrollContainer.scrollLeft === 0) {
+                scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            }
+        });
 
         let isScrolling;
         scrollContainer.addEventListener('scroll', () => {
@@ -125,6 +134,26 @@
                 scrollContainer.scrollLeft = 0;
             }
         }, 50); // Adjust the speed of automatic scrolling
+
+        // Enable touch scrolling
+        let touchStartX = 0;
+        let touchEndX = 0;
+        scrollContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        scrollContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleGesture();
+        });
+
+        function handleGesture() {
+            if (touchEndX < touchStartX) {
+                scrollContainer.scrollLeft += 100; // Scroll forward
+            }
+            if (touchEndX > touchStartX) {
+                scrollContainer.scrollLeft -= 100; // Scroll backward
+            }
+        }
     </script>
 </body>
 </html>
