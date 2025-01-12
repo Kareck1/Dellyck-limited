@@ -118,23 +118,29 @@
         });
 
         // Automatic scrolling
-        setInterval(() => {
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth < scrollContainer.scrollWidth) {
-                scrollContainer.scrollLeft += 1;
-            } else {
+        let autoScroll = setInterval(() => {
+            scrollContainer.scrollLeft += 1;
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
                 scrollContainer.scrollLeft = 0;
             }
         }, 50); // Adjust the speed of automatic scrolling
 
-        // Enable touch scrolling
+        // Enable touch and cursor scrolling
         let touchStartX = 0;
         let touchEndX = 0;
         scrollContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            clearInterval(autoScroll); // Stop automatic scrolling on user interaction
         });
         scrollContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleGesture();
+            autoScroll = setInterval(() => { // Resume automatic scrolling
+                scrollContainer.scrollLeft += 1;
+                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                    scrollContainer.scrollLeft = 0;
+                }
+            }, 50); 
         });
 
         function handleGesture() {
@@ -146,13 +152,20 @@
             }
         }
 
-        // Enable cursor (mouse wheel) scrolling
+        // Enable mouse wheel scrolling
         scrollContainer.addEventListener('wheel', (e) => {
+            clearInterval(autoScroll); // Stop automatic scrolling on user interaction
             if (e.deltaY > 0) {
                 scrollContainer.scrollLeft += 100; // Scroll forward
             } else {
                 scrollContainer.scrollLeft -= 100; // Scroll backward
             }
+            autoScroll = setInterval(() => { // Resume automatic scrolling
+                scrollContainer.scrollLeft += 1;
+                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                    scrollContainer.scrollLeft = 0;
+                }
+            }, 50);
         });
     </script>
 </body>
