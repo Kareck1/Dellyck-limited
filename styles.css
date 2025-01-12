@@ -9,6 +9,8 @@ body {
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling */
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
 body.dark-mode {
     background-color: #333;
@@ -24,6 +26,7 @@ html, body {
     position: relative;
     width: 100%;
     box-sizing: border-box;
+    transition: background-color 1s ease-in-out;
 }
 .banner.dark-mode {
     background-color: #444;
@@ -40,6 +43,7 @@ html, body {
 .banner p {
     margin: 10px 0;
     color: inherit;
+    transition: color 1s ease-in-out;
 }
 .banner img {
     max-width: 100%;
@@ -61,6 +65,17 @@ html, body {
     20%, 60% { transform: translateX(-10px); }
     40%, 80% { transform: translateX(10px); }
 }
+@keyframes expandDarkMode {
+    0% {
+        clip-path: circle(0% at 90% 10%);
+    }
+    100% {
+        clip-path: circle(150% at 90% 10%);
+    }
+}
+body.dark-mode .expand-dark-mode {
+    animation: expandDarkMode 1s forwards;
+}
 .icon {
     position: absolute;
     top: 20px;
@@ -68,6 +83,7 @@ html, body {
     height: 35px;
     cursor: pointer;
     filter: invert(0%);
+    transition: filter 1s ease-in-out;
 }
 body.dark-mode .icon {
     filter: invert(100%);
@@ -88,6 +104,7 @@ body.dark-mode .icon {
     width: 35px;
     height: 35px;
     filter: invert(0%);
+    transition: filter 1s ease-in-out;
 }
 body.dark-mode .hamburger-icon {
     filter: invert(100%);
@@ -104,6 +121,7 @@ body.dark-mode .hamburger-icon {
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
 .nav-menu.dark-mode {
     background-color: #444;
@@ -113,6 +131,7 @@ body.dark-mode .hamburger-icon {
     text-decoration: none;
     color: inherit;
     text-align: center;
+    transition: color 1s ease-in-out;
 }
 .footer {
     background-color: #f5f5f5;
@@ -120,6 +139,7 @@ body.dark-mode .hamburger-icon {
     padding: 10px;
     text-align: center;
     width: 100%;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
 .footer.dark-mode {
     background-color: #333;
@@ -131,7 +151,7 @@ body.dark-mode .hamburger-icon {
 .social-icons a {
     margin: 0 5px;
     display: inline-block;
-    transition: transform 0.3s, filter 0.5s;
+    transition: transform 0.3s, filter 1s ease-in-out;
 }
 .social-icons a:hover {
     transform: scale(1.1);
@@ -140,6 +160,7 @@ body.dark-mode .hamburger-icon {
     width: 25px;
     height: 25px;
     filter: invert(0%);
+    transition: filter 1s ease-in-out;
 }
 body.dark-mode .social-icons img {
     filter: invert(100%);
@@ -148,6 +169,7 @@ body.dark-mode .social-icons img {
     flex: 1;
     padding: 20px;
     text-align: center;
+    transition: color 1s ease-in-out;
 }
 .content-section {
     display: none;
