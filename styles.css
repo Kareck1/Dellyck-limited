@@ -135,7 +135,7 @@ body.dark-mode .hamburger-icon {
 }
 .scrollable-cards-container {
     display: flex;
-    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-x: hidden; /* Hide the scrollbar */
     padding: 20px;
     position: relative;
     scroll-behavior: smooth; /* Smooth scrolling */
@@ -183,18 +183,6 @@ body.dark-mode .hamburger-icon {
 .card-content h3 {
     margin-top: 0;
     font-size: 1em; /* Adjust the font size for smaller cards */
-}
-.card .btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 5px 10px; /* Adjust the padding for smaller buttons */
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-.card .btn:hover {
-    background: rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive design for various screen sizes */
