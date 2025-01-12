@@ -153,6 +153,7 @@ body.dark-mode .hamburger-icon {
     position: relative;
     scroll-behavior: smooth; /* Smooth scrolling */
     width: 100%;
+    padding-right: 70px; /* Space for the forward icon */
 }
 
 .scrollable-cards {
@@ -161,7 +162,7 @@ body.dark-mode .hamburger-icon {
 }
 
 .forward-icon {
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
