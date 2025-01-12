@@ -133,25 +133,22 @@ body.dark-mode .hamburger-icon {
     text-align: center;
     transition: color 1s ease-in-out;
 }
-.scrollable-cards-container {
+.cards-container {
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    max-height: 80vh;
-    width: 320px; /* Adjusted width */
-    margin: 0 auto;
-    padding: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 .card {
     background-image: url('https://img.freepik.com/free-photo/website-html-code-browser-view-printed-white-paper-closeup-view_211682-164.jpg');
     background-size: cover;
     background-position: center;
-    width: 320px; /* Adjusted width */
+    width: 300px;
     height: 400px;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 20px;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 .card:hover {
@@ -206,6 +203,10 @@ body.dark-mode .hamburger-icon {
     }
     .footer {
         padding: 15px;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
