@@ -104,26 +104,17 @@
 
         // Function to make the scrollable cards loop seamlessly and allow user interaction
         const scrollContainer = document.getElementById('scrollable-cards-container');
-        const scrollCards = document.querySelector('.scrollable-cards');
-
-        scrollContainer.addEventListener('scroll', () => {
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                scrollContainer.scrollLeft = 0;
-            } else if (scrollContainer.scrollLeft === 0) {
-                scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-            }
-        });
 
         let isScrolling;
         scrollContainer.addEventListener('scroll', () => {
             window.clearTimeout(isScrolling);
             isScrolling = setTimeout(() => {
                 if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                    scrollContainer.scrollLeft = 0;
+                    scrollContainer.scrollLeft = 1; // Small offset to prevent snapping back too soon
                 } else if (scrollContainer.scrollLeft === 0) {
-                    scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+                    scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth - 1; // Small offset
                 }
-            }, 300);
+            }, 100);
         });
 
         // Automatic scrolling
@@ -154,6 +145,15 @@
                 scrollContainer.scrollLeft -= 100; // Scroll backward
             }
         }
+
+        // Enable cursor (mouse wheel) scrolling
+        scrollContainer.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                scrollContainer.scrollLeft += 100; // Scroll forward
+            } else {
+                scrollContainer.scrollLeft -= 100; // Scroll backward
+            }
+        });
     </script>
 </body>
 </html>
