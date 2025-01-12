@@ -104,13 +104,6 @@
 
         // Function to make the scrollable cards loop seamlessly and allow user interaction
         const scrollContainer = document.getElementById('scrollable-cards-container');
-        const scrollCards = document.querySelector('.scrollable-cards');
-
-        scrollContainer.addEventListener('scroll', () => {
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-                scrollContainer.scrollLeft = 0;
-            }
-        });
 
         let isScrolling;
         scrollContainer.addEventListener('scroll', () => {
