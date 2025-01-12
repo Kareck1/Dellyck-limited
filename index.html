@@ -29,40 +29,46 @@
                 <div class="card" id="ITSupport">
                     <div class="card-content">
                         <h3>IT Support</h3>
+                        <p>Providing comprehensive support for seamless business operations.</p>
                     </div>
                 </div>
                 <div class="card" id="WebDesign">
                     <div class="card-content">
                         <h3>Web Design</h3>
+                        <p>Creating visually appealing and user-friendly websites.</p>
                     </div>
                 </div>
                 <div class="card" id="LanguageEducation">
                     <div class="card-content">
                         <h3>Language Education</h3>
+                        <p>Helping you communicate effectively in multiple languages.</p>
                     </div>
                 </div>
                 <div class="card" id="HRConsulting">
                     <div class="card-content">
                         <h3>HR Consulting</h3>
+                        <p>Innovative HR solutions to optimize workforce performance.</p>
                     </div>
                 </div>
                 <div class="card" id="SoftwareCreation">
                     <div class="card-content">
                         <h3>Software Creation</h3>
+                        <p>Custom software solutions tailored to your needs.</p>
                     </div>
                 </div>
                 <div class="card" id="DigitalMarketing">
                     <div class="card-content">
                         <h3>Digital Marketing</h3>
+                        <p>Reaching wider audiences to grow your business.</p>
                     </div>
                 </div>
                 <div class="card" id="EventPlanning">
                     <div class="card-content">
                         <h3>Event Planning</h3>
+                        <p>Executing impactful events to achieve your goals.</p>
                     </div>
                 </div>
             </div>
-            <img src="https://cdn.iconscout.com/icon/free/png-512/free-forward-icon-download-in-svg-png-gif-file-formats--arrow-next-right-user-interface-pack-icons-1516139.png?f=webp&w=256" alt="Next" class="forward-icon" onclick="scrollForward()">
         </div>
     </div>
 
@@ -83,7 +89,7 @@
 
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
-            var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .social-icons img');
+            var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .cards-title, .card-content, .social-icons img');
             elements.forEach(function(element) {
                 element.classList.toggle('dark-mode');
             });
@@ -124,10 +130,6 @@
             if (touchEndX > touchStartX) {
                 scrollContainer.scrollLeft -= 100; // Scroll backward
             }
-        }
-
-        function scrollForward() {
-            scrollContainer.scrollLeft += 300; // Adjust this value to control the scroll distance
         }
     </script>
 </body>
