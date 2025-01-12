@@ -23,7 +23,7 @@
     </div>
 
     <div class="content">
-        <div class="scrollable-cards-container">
+        <div class="scrollable-cards-container" id="scrollable-cards-container">
             <div class="scrollable-cards">
                 <div class="card" id="ITSupport">
                     <div class="card-content">
@@ -101,6 +101,37 @@
                 closeMenu();
             }
         });
+
+        // Function to make the scrollable cards loop seamlessly and allow user interaction
+        const scrollContainer = document.getElementById('scrollable-cards-container');
+        const scrollCards = document.querySelector('.scrollable-cards');
+
+        scrollContainer.addEventListener('scroll', () => {
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                scrollContainer.scrollLeft = 0;
+            }
+        });
+
+        let isScrolling;
+        scrollContainer.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                    scrollContainer.scrollLeft = 0;
+                } else if (scrollContainer.scrollLeft === 0) {
+                    scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+                }
+            }, 300);
+        });
+
+        // Automatic scrolling
+        setInterval(() => {
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth < scrollContainer.scrollWidth) {
+                scrollContainer.scrollLeft += 1;
+            } else {
+                scrollContainer.scrollLeft = 0;
+            }
+        }, 50); // Adjust the speed of automatic scrolling
     </script>
 </body>
 </html>
