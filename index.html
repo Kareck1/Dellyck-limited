@@ -3,77 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dellyck Limited</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Service Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            max-height: 500px; /* Adjust as needed */
+            padding: 10px;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #444 #222;
+        }
+
+        .cards-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .cards-container::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+
+        .cards-container::-webkit-scrollbar-track {
+            background: #222;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #222;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .view-more {
+            text-align: center;
+            margin-top: 10px;
+            color: #0af;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="banner">
-        <h1 class="animation" onclick="location.reload();">Dellyck Limited<img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo"></h1>
-        <p>Empowering Your Business with Innovative Solutions</p>
-        <img src="https://cdn-icons-png.flaticon.com/128/8238/8238158.png" alt="Sign Up" class="icon signup-icon" onclick="window.location.href='signup.html'">
-        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon" onclick="toggleDarkMode()">
-        <div class="hamburger" onclick="toggleMenu()">
-            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
+    <div class="cards-container">
+        <div class="card">
+            <div>
+                <h3>IT Support</h3>
+                <p>Technical Assistance</p>
+            </div>
         </div>
-        <div class="nav-menu" id="navMenu">
-            <a href="about.html">About Us</a>
-            <a href="services.html">Our Services</a>
-            <a href="contact.html">Contact Us</a>
+
+        <div class="card">
+            <div>
+                <h3>Web Design</h3>
+                <p>Modern Websites</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Language Education</h3>
+                <p>Learn & Grow</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>HR Consulting</h3>
+                <p>Team Solutions</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Software Creation</h3>
+                <p>Custom Software</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Digital Marketing</h3>
+                <p>Boost Your Brand</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Event Planning</h3>
+                <p>Memorable Events</p>
+            </div>
         </div>
     </div>
-
-    <div class="content">
-        <!-- Content sections can remain here -->
-    </div>
-
-    <div class="footer">
-        &copy; 2025 Dellyck Limited. All rights reserved.
-        <div class="social-icons">
-            <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram">
-            </a>
-            <a href="https://www.twitter.com/jerrick_kent/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/5968/5968958.png" alt="Twitter">
-            </a>
-            <a href="https://www.linkedin.com/in/derrickk250/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/3116/3116491.png" alt="TikTok">
-            </a>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("navMenu");
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
-            }
-        }
-        
-        function closeMenu() {
-            var menu = document.getElementById("navMenu");
-            menu.style.display = "none";
-        }
-
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            var elements = document.querySelectorAll('.banner, .footer, .nav-menu, .icon, .hamburger-icon, .social-icons img');
-            elements.forEach(function(element) {
-                element.classList.toggle('dark-mode');
-            });
-        }
-
-        document.addEventListener('click', function(event) {
-            var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.querySelector('.nav-menu').contains(event.target);
-
-            if (!isClickInside) {
-                closeMenu();
-            }
-        });
-    </script>
+    <div class="view-more">View More</div>
 </body>
 </html>
