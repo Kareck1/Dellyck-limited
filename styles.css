@@ -152,50 +152,47 @@ body.dark-mode .hamburger-icon {
 body.dark-mode .social-icons img {
     filter: invert(100%);
 }
-@media (max-width: 600px) {
-    .banner h1 {
-        font-size: 1.5em;
-    }
-    .icon {
-        width: 30px;
-        height: 30px;
-    }
-    .nav-menu {
-        width: 100px;
-        height: 100px;
-    }
-    .nav-menu a {
-        padding: 8px 16px;
-    }
-    .social-icons img {
-        width: 20px;
-        height: 20px;
-    }
-}
-@media (min-width: 601px) {
-    .banner {
-        padding: 40px;
-    }
-    .banner h1 {
-        font-size: 2.5em;
-    }
-    .banner p {
-        margin: 20px 0;
-    }
-    .nav-menu {
-        padding: 20px;
-    }
-    .nav-menu a {
-        padding: 12px 24px;
-    }
-    .footer {
-        padding: 20px;
-    }
-}
 .content {
     flex: 1;
     padding: 20px;
     text-align: center;
+}
+.scrollable-cards-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 80vh;
+    margin-bottom: 20px;
+}
+.card {
+    padding: 20px;
+    background-color: #fff;
+    background-image: url('https://lh3.googleusercontent.com/p/AF1QipPST2Tu1olrGXY5MIe_q3A2u01AyPhFhWSejXWU=s680-w680-h510');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card:hover {
+    background-color: rgba(0, 123, 255, 0.7);
+    color: #fff;
+}
+.card h3 {
+    margin: 0;
+    font-size: 1em;
+}
+.card .arrow {
+    font-size: 1.5em;
+    color: inherit;
 }
 .content-section {
     display: none;
