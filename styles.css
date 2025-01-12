@@ -144,6 +144,12 @@ body.dark-mode .hamburger-icon {
 .scrollable-cards {
     display: flex;
     gap: 20px; /* Add space between cards */
+    animation: slide 20s linear infinite; /* Automatic sliding animation */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 .card {
