@@ -133,23 +133,30 @@ body.dark-mode .hamburger-icon {
     text-align: center;
     transition: color 1s ease-in-out;
 }
+.cards-title {
+    text-align: center;
+    margin: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
 .scrollable-cards-container {
     display: flex;
     overflow-x: hidden; /* Hide the scrollbar */
     padding: 20px;
     position: relative;
     scroll-behavior: smooth; /* Smooth scrolling */
+    width: 100%;
 }
 
 .scrollable-cards {
     display: flex;
     gap: 20px; /* Add space between cards */
-    animation: slide 20s linear infinite; /* Automatic sliding animation */
+    animation: scroll 30s linear infinite; /* Automatic sliding animation */
 }
 
-@keyframes slide {
+@keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(calc(-170px * 7)); } /* Adjust based on the card width and number of cards */
 }
 
 .card {
