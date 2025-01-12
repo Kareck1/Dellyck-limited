@@ -171,12 +171,16 @@ body.dark-mode .social-icons img {
         width: 20px;
         height: 20px;
     }
-    .cards-container {
+    .scrollable-cards-container {
         flex-direction: column;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
     }
     .card {
         width: 100%;
         margin-bottom: 10px;
+        display: inline-block;
     }
     .card img {
         width: 40px;
@@ -208,10 +212,12 @@ body.dark-mode .social-icons img {
     padding: 20px;
     text-align: center;
 }
-.cards-container {
+.scrollable-cards-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
     gap: 10px;
 }
 .card {
@@ -223,6 +229,7 @@ body.dark-mode .social-icons img {
     cursor: pointer;
     transition: background-color 0.5s, color 0.5s;
     text-align: center;
+    flex: 0 0 auto;
 }
 .card:hover {
     background-color: #007bff;
