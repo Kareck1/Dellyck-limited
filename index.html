@@ -70,6 +70,85 @@
                 </div>
             </div>
         </div>
+
+        <!-- New Sections -->
+        <h2 class="cards-title">Service Highlights</h2>
+        <div class="service-highlights">
+            <div class="highlight">
+                <h3>Comprehensive IT Support</h3>
+                <p>Ensuring your business operates smoothly with round-the-clock support.</p>
+            </div>
+            <div class="highlight">
+                <h3>Creative Web Design</h3>
+                <p>Designing visually captivating and highly functional websites.</p>
+            </div>
+        </div>
+
+        <h2 class="cards-title">Meet Our Team</h2>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member">
+                <h4>John Doe</h4>
+                <p>CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member">
+                <h4>Jane Smith</h4>
+                <p>CTO</p>
+            </div>
+        </div>
+
+        <h2 class="cards-title">Our Clients</h2>
+        <div class="client-logos">
+            <img src="https://via.placeholder.com/100" alt="Client Logo">
+            <img src="https://via.placeholder.com/100" alt="Client Logo">
+        </div>
+
+        <h2 class="cards-title">Awards & Certifications</h2>
+        <div class="awards-section">
+            <div class="award">
+                <h3>Best IT Service Provider 2024</h3>
+                <p>Awarded for exceptional service and support.</p>
+            </div>
+            <div class="award">
+                <h3>ISO 9001 Certification</h3>
+                <p>Recognized for quality management systems.</p>
+            </div>
+        </div>
+
+        <h2 class="cards-title">Resource Center</h2>
+        <div class="resource-center">
+            <div class="resource">
+                <h3>Whitepaper on Cybersecurity</h3>
+                <p>Download our comprehensive guide to protect your business.</p>
+                <a href="resources/cybersecurity-whitepaper.pdf" download>Download</a>
+            </div>
+            <div class="resource">
+                <h3>Case Study: XYZ Corp</h3>
+                <p>Learn how we helped XYZ Corp achieve their goals.</p>
+                <a href="resources/xyz-corp-case-study.pdf" download>Download</a>
+            </div>
+        </div>
+
+        <h2 class="cards-title">Contact Us</h2>
+        <div class="contact-form">
+            <form action="submit_contact_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <h2 class="cards-title">Connect With Us</h2>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384053.png" alt="Facebook"></a>
+            <a href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384065.png" alt="Twitter"></a>
+            <a href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384088.png" alt="LinkedIn"></a>
+        </div>
     </div>
 
     <script>
@@ -103,7 +182,7 @@
             }
         });
 
-        // Enable touch and cursor scrolling
+              // Enable touch and cursor scrolling
         const scrollContainer = document.getElementById('scrollable-cards-container');
         scrollContainer.addEventListener('wheel', (e) => {
             if (e.deltaY > 0) {
