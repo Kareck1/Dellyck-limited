@@ -114,14 +114,13 @@ body.dark-mode .hamburger-icon {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 20px;
-    left: 60px;
+    top: 60px;
+    left: 20px;
     width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
 }
 .nav-menu.dark-mode {
     background-color: #444;
@@ -219,51 +218,119 @@ body.dark-mode .card-content {
     font-size: 1em; /* Paragraph text size */
 }
 
-/* Testimonials */
-.testimonials {
+/* Service Highlights */
+.service-highlights {
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+.highlight {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+}
+.highlight h3 {
+    margin-top: 0;
+}
+body.dark-mode .highlight {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .highlight h3, body.dark-mode .highlight p {
+    color: #f5f5f5;
+}
+
+/* Team Section */
+.team-section {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.team-member {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+body.dark-mode .team-member {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .team-member h4, body.dark-mode .team-member p {
+    color: #f5f5f5;
+}
+
+/* Client Logos */
+.client-logos {
     padding: 20px;
     text-align: center;
 }
-.testimonial {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
+.client-logos img {
     margin: 10px;
+    max-width: 100px;
+    transition: transform 0.3s;
 }
-.testimonial h4 {
-    margin-top: 10px;
-    color: #555;
+.client-logos img:hover {
+    transform: scale(1.1);
 }
 
-/* Blog Posts */
-.blog-posts {
+/* Awards Section */
+.awards-section {
     padding: 20px;
+    text-align: center;
 }
-.post {
+.award {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
     margin: 10px;
 }
-.post h3 {
+.award h3 {
     margin-top: 0;
+}
+body.dark-mode .award {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .award h3, body.dark-mode .award p {
+    color: #f5f5f5;
 }
 
-/* FAQ */
-.faq {
+/* Resource Center */
+.resource-center {
     padding: 20px;
+    text-align: center;
 }
-.faq-item {
+.resource {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
     margin: 10px;
+    text-align: left;
 }
-.faq-item h3 {
+.resource h3 {
     margin-top: 0;
+}
+body.dark-mode .resource {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .resource h3, body.dark-mode .resource p {
+    color: #f5f5f5;
 }
 
 /* Contact Form */
@@ -304,33 +371,6 @@ body.dark-mode .card-content {
     padding: 20px;
     text-align: center;
 }
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-.social-icons img:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive design for various screen sizes */
-@media (max-width: 480px) {
-    .banner h1 {
-        font-size: 1.8em;
-    }
-    .icon {
-        width: 30px;
-        height: 30px;
-    }
-    .nav-menu {
-        width: 100px;
-        height: 100px;
-    }
-    .nav-menu a {
-        padding: 8px 16px;
-    }
 .social-icons img {
     width: 30px;
     height: 30px;
