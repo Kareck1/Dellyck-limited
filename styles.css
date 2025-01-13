@@ -139,6 +139,14 @@ body.dark-mode .hamburger-icon {
     color: #333;
     animation: fadeIn 2s;
 }
+
+
+
+
+
+
+
+
 body.dark-mode .cards-title {
     color: #f5f5f5;
 }
@@ -172,10 +180,10 @@ body.dark-mode .cards-title {
     background-image: url('https://img.freepik.com/free-photo/website-html-code-browser-view-printed-white-paper-closeup-view_211682-164.jpg');
     background-size: cover;
     background-position: center;
-    width: 250px; /* Make the card larger */
-    height: 250px; /* Make the card larger */
+    width: 200px; /* Make the card larger */
+    height: 200px; /* Make the card larger */
     position: relative;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 30px; /* Rounded corners */
     overflow: hidden;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     animation: float 2s infinite;
