@@ -146,8 +146,8 @@
         <h2 class="cards-title">Connect With Us</h2>
         <div class="social-icons">
             <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384053.png" alt="Facebook"></a>
-            <a href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384065.png" alt="Twitter"></a>
-            <a href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384088.png" alt="LinkedIn"></a>
+            <a href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384065.png" alt="Twitter"></a>
+            <a href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384088.png" alt="LinkedIn"></a>
         </div>
     </div>
 
@@ -181,35 +181,6 @@
                 closeMenu();
             }
         });
-
-              // Enable touch and cursor scrolling
-        const scrollContainer = document.getElementById('scrollable-cards-container');
-        scrollContainer.addEventListener('wheel', (e) => {
-            if (e.deltaY > 0) {
-                scrollContainer.scrollLeft += 100; // Scroll forward
-            } else {
-                scrollContainer.scrollLeft -= 100; // Scroll backward
-            }
-        });
-
-        let touchStartX = 0;
-        let touchEndX = 0;
-        scrollContainer.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        scrollContainer.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleGesture();
-        });
-
-        function handleGesture() {
-            if (touchEndX < touchStartX) {
-                scrollContainer.scrollLeft += 100; // Scroll forward
-            }
-            if (touchEndX > touchStartX) {
-                scrollContainer.scrollLeft -= 100; // Scroll backward
-            }
-        }
     </script>
 </body>
 </html>
