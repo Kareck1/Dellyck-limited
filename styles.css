@@ -1,189 +1,467 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dellyck Limited</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="banner">
-        <h1 class="animation" onclick="location.reload();">Dellyck Limited<img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo"></h1>
-        <p>Empowering Your Business with Innovative Solutions</p>
-        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon expand-dark-mode" onclick="toggleDarkMode()">
-        <div class="hamburger" onclick="toggleMenu()">
-            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <a href="about.html">About Us</a>
-            <a href="services.html">Our Services</a>
-            <a href="contact.html">Contact Us</a>
-        </div>
-    </div>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling */
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+html, body {
+    overflow-x: hidden; /* Prevent side-scrolling */
+}
+.banner {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 1s ease-in-out;
+}
+.banner.dark-mode {
+    background-color: #444;
+}
+.banner h1 {
+    margin: 0;
+    font-size: 2.5em;
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+    animation: shake 0.5s;
+    animation-iteration-count: 6;
+}
+.banner p {
+    margin: 10px 0;
+    color: inherit;
+    transition: color 1s ease-in-out;
+}
+.banner img {
+    max-width: 100%;
+    height: auto;
+}
+.spinning-logo {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    animation: spin 10s linear infinite;
+    vertical-align: middle;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+@keyframes expandDarkMode {
+    0% {
+        clip-path: circle(0% at 90% 10%);
+    }
+    100% {
+        clip-path: circle(150% at 90% 10%);
+    }
+}
+body.dark-mode .expand-dark-mode {
+    animation: expandDarkMode 1s forwards;
+}
 
-    <div class="content">
-        <h2 class="cards-title">Explore Our Services</h2>
-        <div class="scrollable-cards-container" id="scrollable-cards-container">
-            <div class="scrollable-cards">
-                <div class="card" id="ITSupport" style="background-image: url('https://img.freepik.com/free-photo/optical-fiber-background_23-2149301540.jpg?t=st=1736784272~exp=1736787872~hmac=93c38d8b06bf066b8143c42785a8f15f2fcf156f61f6547a7c37ddc2e9c76e0e&w=740');">
-                    <div class="card-content">
-                        <h3>IT Support</h3>
-                    </div>
-                </div>
-                <div class="card" id="WebDesign" style="background-image: url('https://img.freepik.com/free-vector/blue-futuristic-networking-technology-vector_53876-151537.jpg?t=st=1736786041~exp=1736789641~hmac=89bf3cb4f8763a136ba57989c23f67d10ef70bad627b5eebbd5d04fce5ebc354&w=360');">
-                    <div class="card-content">
-                        <h3>Web Design</h3>
-                    </div>
-                </div>
-                <div class="card" id="LanguageEducation" style="background-image: url('https://img.freepik.com/premium-photo/close-up-vr-glasses-with-abstract-metaverse-sphere-blurry-office-desktop-background-future-abstract-digital-world-concept-double-exposure_670147-86120.jpg?w=740');">
-                    <div class="card-content">
-                        <h3>Language</h3>
-                        <h3>Education</h3>
-                    </div>
-                </div>
-                <div class="card" id="HRConsulting" style="background-image: url('https://img.freepik.com/premium-photo/data-scientist-working-with-modern-technology_1288657-22361.jpg?w=740');">
-                    <div class="card-content">
-                        <h3>HR Consulting</h3>
-                    </div>
-                </div>
-                <div class="card" id="SoftwareCreation" style="background-image: url('https://img.freepik.com/free-photo/ai-nuclear-energy-future-innovation-disruptive-technology_53876-129784.jpg?t=st=1736786093~exp=1736789693~hmac=f411037365b903044e345c1c6241938c73abb962439df8bef3f1a932f56d1080&w=360');">
-                    <div class="card-content">
-                        <h3>Software Creation</h3>
-                    </div>
-                </div>
-                <div class="card" id="DigitalMarketing" style="background-image: url('https://img.freepik.com/free-photo/man-wearing-smart-glasses-touching-virtual-screen-futuristic-technology-digital-remix_53876-124731.jpg?t=st=1736786118~exp=1736789718~hmac=b5849ae7b288bb23b1851c522dda7c0c58a3b5d5f31cf53100a6ca1ba0988353&w=740');">
-                    <div class="card-content">
-                        <h3>Digital Marketing</h3>
-                    </div>
-                </div>
-                <div class="card" id="EventPlanning" style="background-image: url('https://img.freepik.com/free-photo/man-using-vr-glasses_23-2149370616.jpg?t=st=1736786135~exp=1736789735~hmac=d52a785d95e7275a31434e6e77aaf2294bd413da8fce2e62f5e92682e76b7c0c&w=740');">
-                    <div class="card-content">
-                        <h3>Event Planning</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- New Sections -->
-        <h2 class="cards-title">Service Highlights</h2>
-        
-        <!-- Video below Service Highlights -->
-<video autoplay muted loop playsinline class="background-video">
-    <source src="https://res.cloudinary.com/dflb2hkfo/video/upload/v1736812388/clip_anofjl.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-        
-        
-        <div class="service-highlights">
-            <div class="highlight">
-                <h3>Comprehensive IT Support</h3>
-                <p>Ensuring your business operates smoothly with round-the-clock support.</p>
-            </div>
-            <div class="highlight">
-                <h3>Creative Web Design</h3>
-                <p>Designing visually captivating and highly functional websites.</p>
-            </div>
-        </div>
+/* CSS to control the video position and size */
+.background-video {
+    width: 100%;
+    max-height: 400px; /* Adjust height as needed */
+    object-fit: cover; /* Ensure it scales nicely without distortion */
+    margin-top: 30px; /* Add some space between the Service Highlights and the video */
+    display: block;
 
-        <h2 class="cards-title">Meet Our Team</h2>
-        <div class="team-section">
-            <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Team Member">
-                <h4>KAREMERA</h4>
-                <p>CEO</p>
-            </div>
-            <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Team Member">
-                <h4>David</h4>
-                <p>CTO</p>
-            </div>
-        </div>
-        
-<h2 class="cards-title">Our Clients</h2>
-        
-<div class="client-logos">
-    <img src="https://images.seeklogo.com/logo-png/9/1/mtn-logo-png_seeklogo-95716.png?v=1957908387074490032">
-    <img src="https://mailmeteor.com/logos/assets/PNG/Microsoft_Logo_512px.png" alt="Microsoft Logo">
-     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8GMw5aEhvfEtxTybaScYux-qRtQN-l4k6w&s">
-</div>
+}
 
-        <h2 class="cards-title">Awards & Certifications</h2>
-        <div class="awards-section">
-            <div class="award">
-                <h3>Best IT Service Provider 2024</h3>
-                <p>Awarded for exceptional service and support.</p>
-            </div>
-            <div class="award">
-                <h3>ISO 9001 Certification</h3>
-                <p>Recognized for quality management systems.</p>
-            </div>
-        </div>
 
-        <h2 class="cards-title">Resource Center</h2>
-        <div class="resource-center">
-            <div class="resource">
-                <h3>Whitepaper on Cybersecurity</h3>
-                <p>Download our comprehensive guide to protect your business.</p>
-                <a href="resources/cybersecurity-whitepaper.pdf" download>Download</a>
-            </div>
-            <div class="resource">
-                <h3>Case Study: XYZ Corp</h3>
-                <p>Learn how we helped XYZ Corp achieve their goals.</p>
-                <a href="resources/xyz-corp-case-study.pdf" download>Download</a>
-            </div>
-        </div>
+.icon {
+    position: absolute;
+    top: 20px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    filter: invert(0%);
+    transition: filter 1s ease-in-out;
+}
+body.dark-mode .icon {
+    filter: invert(100%);
+}
+.signup-icon {
+    right: 60px;
+}
+.dark-mode-icon {
+    right: 20px;
+}
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+.hamburger-icon {
+    width: 35px;
+    height: 35px;
+    filter: invert(0%);
+    transition: filter 1s ease-in-out;
+}
+body.dark-mode .hamburger-icon {
+    filter: invert(100%);
+}
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 1s ease-in-out;
+}
+.nav-menu.dark-mode {
+    background-color: #444;
+}
+.nav-menu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: color 1s ease-in-out;
+}
+.cards-title {
+    text-align: center;
+    margin: 20px;
+    font-size: 2em;
+    color: #333;
+    animation: fadeIn 2s;
+}
+body.dark-mode .cards-title {
+    color: #f5f5f5;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.scrollable-cards-container {
+    display: flex;
+    overflow-x: auto; /* Allow manual horizontal scrolling */
+    padding: 10px;
+    position: relative;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    width: 100%; /* Full width */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+}
+.scrollable-cards-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+.scrollable-cards {
+    display: flex;
+    gap: 20px; /* Add space between cards */
+}
+.card {
+    flex: 0 0 auto; /* Keep cards in their size and not shrink */
+    background-size: cover;
+    background-position: center;
+    width: 200px; /* Make the card larger */
+    height: 200px; /* Make the card larger */
+    position: relative;
+    border-radius: 30px; /* Rounded corners */
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    animation: float 2s infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+.card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+}
+body.dark-mode .card-content {
+    background: rgba(255, 255, 255, 0.1);
+}
+.card-content h3, .card-content p {
+    margin: 0;
+}
+.card-content h3 {
+    font-size: 1.5em; /* Larger font size */
+    margin-bottom: 10px;
+}
+.card-content p {
+    font-size: 1em; /* Paragraph text size */
+}
+/* Service Highlights */
+.service-highlights {
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+.highlight {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+}
+.highlight h3 {
+    margin-top: 0;
+}
+body.dark-mode .highlight {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .highlight h3, body.dark-mode .highlight p {
+    color: #f5f5f5;
+}
+/* Team Section */
+.team-section {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.team-member {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+body.dark-mode .team-member {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .team-member h4, body.dark-mode .team-member p {
+    color: #f5f5f5;
+}
+/* Client Logos */
+.client-logos {
+    padding: 20px;
+    text-align: center;
+}
+.client-logos img {
+    margin: 10px;
+    max-width: 100px;
+    transition: transform 0.3s;
+}
+.client-logos img:hover {
+    transform: scale(1.1);
+}
+/* Awards Section */
+.awards-section {
+    padding: 20px;
+    text-align: center;
+}
+.award {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+}
+.award h3 {
+    margin-top: 0;
+}
+body.dark-mode .award {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .award h3, body.dark-mode .award p {
+    color: #f5f5f5;
+}
+/* Resource Center */
+.resource-center {
+    padding: 20px;
+    text-align: center;
+}
+.resource {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+}
+.resource h3 {
+    margin-top: 0;
+}
+body.dark-mode .resource {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode .resource h3, body.dark-mode .resource p {
+    color: #f5f5f5;
+}
 
-        <h2 class="cards-title">Contact Us</h2>
-        <div class="contact-form">
-            <form action="submit_contact_form.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+/* Contact Form */
+.contact-form {
+    padding: 20px;
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contact-form label {
+    margin-top: 10px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.contact-form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #45a049;
+}
 
-        <h2 class="cards-title">Connect With Us</h2>
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384053.png" alt="Facebook"></a>
-            <a href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384065.png" alt="Twitter"></a>
-            <a href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/1384088.png" alt="LinkedIn"></a>
-        </div>
-    </div>
+/* Social Icons */
+.social-icons {
+    padding: 20px;
+    text-align: center;
+}
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.social-icons img:hover {
+    transform: scale(1.1);
+}
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("navMenu");
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
-            }
-        }
+/* Responsive design for various screen sizes */
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.8em;
+    }
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+    .nav-menu {
+        width: 100px;
+        height: 100px;
+    }
+    .nav-menu a {
+        padding: 8px 16px;
+    }
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+    .footer {
+        padding: 15px;
+    }
+}
 
-        function closeMenu() {
-            var menu = document.getElementById("navMenu");
-            menu.style.display = "none";
-        }
+@media (min-width: 481px) and (max-width: 768px) {
+    .banner {
+        padding: 30px;
+    }
+    .banner h1 {
+        font-size: 2.2em;
+    }
+    .icon {
+        width: 35px;
+        height: 35px;
+    }
+    .nav-menu {
+        width: 120px;
+        height: 120px;
+    }
+    .nav-menu a {
+        padding: 10px 20px;
+    }
+    .social-icons img {
+        width: 22px;
+        height: 22px;
+    }
+    .footer {
+        padding: 18px;
+    }
+}
 
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .cards-title, .card-content, .social-icons img');
-            elements.forEach(function(element) {
-                element.classList.toggle('dark-mode');
-            });
-        }
-
-        document.addEventListener('click', function(event) {
-            var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.querySelector('.nav-menu').contains(event.target);
-
-            if (!isClickInside) {
-                closeMenu();
-            }
-        });
-    </script>
-</body>
-</html>
+@media (min-width: 769px) {
+    .banner {
+        padding: 40px;
+    }
+    .banner h1 {
+        font-size: 2.5em;
+    }
+    .banner p {
+        margin: 20px 0;
+    }
+    .nav-menu {
+        padding: 20px;
+    }
+    .nav-menu a {
+        padding: 12px 24px;
+    }
+    .footer {
+        padding: 20px;
+    }
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    transition: color 1s ease-in-out;
+}
+.content-section {
+    display: none;
+    text-align: left;
+}
+.content-section.active {
+    display: block;
+}
