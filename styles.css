@@ -154,7 +154,7 @@ body.dark-mode .cards-title {
     padding: 10px;
     position: relative;
     scroll-behavior: smooth; /* Smooth scrolling */
-    width: 800%;
+    width: 100%; /* Full width */
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
 }
