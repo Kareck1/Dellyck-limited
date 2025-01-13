@@ -151,10 +151,10 @@ body.dark-mode .cards-title {
 .scrollable-cards-container {
     display: flex;
     overflow-x: auto; /* Allow manual horizontal scrolling */
-    padding: 20px;
+    padding: 10px;
     position: relative;
     scroll-behavior: smooth; /* Smooth scrolling */
-    width: 100%;
+    width: 800%;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
 }
@@ -173,7 +173,7 @@ body.dark-mode .cards-title {
     background-size: cover;
     background-position: center;
     width: 250px; /* Make the card larger */
-    height: 300px; /* Make the card larger */
+    height: 250px; /* Make the card larger */
     position: relative;
     border-radius: 10px; /* Rounded corners */
     overflow: hidden;
