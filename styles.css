@@ -198,7 +198,7 @@ body.dark-mode .cards-title {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 20px;
+    padding: 20px
     text-align: center;
     transition: background 0.5s ease-in-out;
 }
