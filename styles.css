@@ -78,6 +78,7 @@ body.dark-mode .expand-dark-mode {
     animation: expandDarkMode 1s forwards;
 }
 
+
 .background-video {
     width: 100%;
     height: auto;
@@ -89,14 +90,11 @@ body.dark-mode .expand-dark-mode {
 
 
 
-
-
-
 .icon {
     position: absolute;
     top: 20px;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     filter: invert(0%);
     transition: filter 1s ease-in-out;
