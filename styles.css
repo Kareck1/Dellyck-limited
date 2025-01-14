@@ -86,23 +86,6 @@ body.dark-mode .expand-dark-mode {
     margin-top: 20px;
     display: block;
     border-radius: 15px;
-    overflow: hidden;
-}
-
-/* For screens larger than 1024px (desktops) */
-@media (min-width: 1024px) {
-    .background-video {
-        height: 30vw; /* Slightly smaller height for larger screens */
-    }
-}
-
-/* For screens smaller than 600px (mobile phones) */
-@media (max-width: 600px) {
-    .background-video {
-        height: 60vw; /* Increase height for phones to make it more noticeable */
-    }
-}
-
 
 .icon {
     position: absolute;
