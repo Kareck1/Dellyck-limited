@@ -79,16 +79,37 @@ body.dark-mode .expand-dark-mode {
 }
 
 
+/* Container for the video */
+.video-container {
+    width: 100%;
+    max-width: 1200px; /* Or another max width you prefer */
+    margin: 0 auto;
+    padding: 20px; /* Optional padding */
+}
+
 /* Ensuring video placement under the service highlights */
 .background-video {
     width: 100%;
-    max-height: 400px; /* Default height, you can adjust based on your design */
+    height: auto; /* This will make sure the video maintains its aspect ratio */
     object-fit: cover; /* Ensures video scales without distortion */
-    margin: 20px auto; /* Add spacing between the Service Highlights and video, centers the video */
-    display: block;
     border-radius: 15px; /* Adjust the value for more or less rounding */
     padding: 0 10%; /* Add padding to avoid the video touching the edges of the screen */
+    display: block;
 }
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    .background-video {
+        max-height: 500px; /* Increase height for larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .background-video {
+        max-height: 600px; /* Further increase height for very large screens */
+    }
+}
+
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
