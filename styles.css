@@ -78,46 +78,14 @@ body.dark-mode .expand-dark-mode {
     animation: expandDarkMode 1s forwards;
 }
 
-
-/* Container for the video */
-.video-container {
-    width: 100%;
-    max-width: 1200px; /* Or another max width you prefer */
-    margin: 0 auto;
-    padding: 20px; /* Optional padding */
-}
-
-/* Ensuring video placement under the service highlights */
 .background-video {
     width: 100%;
-    height: auto; /* This will make sure the video maintains its aspect ratio */
-    object-fit: cover; /* Ensures video scales without distortion */
-    border-radius: 15px; /* Adjust the value for more or less rounding */
-    padding: 0 10%; /* Add padding to avoid the video touching the edges of the screen */
+    height: auto;
+    max-height: 100vh; /* Ensures the video fits within the viewport height */
     display: block;
+    margin: 0 auto; /* Centers the video */
 }
 
-/* Media queries for responsive design */
-@media (min-width: 768px) {
-    .background-video {
-        max-height: 500px; /* Increase height for larger screens */
-    }
-}
-
-@media (min-width: 1200px) {
-    .background-video {
-        max-height: 600px; /* Further increase height for very large screens */
-    }
-}
-
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .background-video {
-        max-height: 200px; /* Adjust based on your design */
-        padding: 0 5%; /* Adjust the padding for smaller screens */
-    }
-}
 
 
 
