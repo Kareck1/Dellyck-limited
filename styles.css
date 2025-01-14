@@ -78,15 +78,15 @@ body.dark-mode .expand-dark-mode {
 }
 
 
-/* CSS to control the video position and size */
+/* Ensuring video placement under the service highlights */
 .background-video {
     width: 100%;
-    max-height: 400px; /* Adjust height as needed */
-    object-fit: cover; /* Ensure it scales nicely without distortion */
-    margin-top: 30px; /* Add some space between the Service Highlights and the video */
+    max-height: 400px; /* Adjust based on your design */
+    object-fit: cover; /* Ensures video scales without distortion */
+    margin-top: 20px; /* Add spacing between the Service Highlights and video */
     display: block;
-
 }
+
 
 
 .icon {
