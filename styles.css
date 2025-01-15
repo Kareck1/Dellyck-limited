@@ -490,3 +490,34 @@ body.dark-mode .footer {
     display: block;
 }
 
+/* Service Page Buttons */
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.cta-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Animation for Service Page */
+.service-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+.service-details ul li {
+    background-color: #e0e0e0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.service-details ul li:hover {
+    background-color: #d5d5d5;
+}
