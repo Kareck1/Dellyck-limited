@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Build - Dellyck Limited</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <h1 class="animation" onclick="location.reload();">Dellyck Limited<img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo"></h1>
+        <p>Empowering Your Business with Innovative Solutions</p>
+        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon expand-dark-mode" onclick="toggleDarkMode()">
+        <div class="hamburger" onclick="toggleMenu()">
+            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2 class="cards-title">App Build</h2>
+        <p>Bringing your app ideas to life with cutting-edge technology.</p>
+        <div class="service-details">
+            <h3>Our App Build Services Include:</h3>
+            <ul>
+                <li>Custom Mobile App Development</li>
+                <li>iOS and Android App Development</li>
+                <li>App Maintenance and Support</li>
+                <li>UI/UX Design for Apps</li>
+                <li>API Integration</li>
+            </ul>
+            <button class="cta-button" onclick="location.href='contact.html'">Get in Touch</button>
+        </div>
+        <h3>Why Choose Us?</h3>
+        <p>At Dellyck Limited, we specialize in creating innovative and user-friendly mobile applications. Our team of experienced developers is ready to turn your ideas into reality.</p>
+
+        <h2 class="cards-title">Connect With Us</h2>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" class="animated-icon">
+            </a>
+            <a href="https://x.com/jerrick_kent/?mx=2" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="Twitter" class="animated-icon">
+            </a>
+            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/3046/3046120.png" alt="TikTok" class="animated-icon">
+            </a>
+        </div>
+
+        <footer class="footer">
+            <p>© 2025 Dellyck Limited. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+
+        function closeMenu() {
+            var menu = document.getElementById("navMenu");
+            menu.style.display = "none";
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .cards-title, .card-content, .social-icons img');
+            elements.forEach(function(element) {
+                element.classList.toggle('dark-mode');
+            });
+        }
+
+        document.addEventListener('click', function(event) {
+            var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.querySelector('.nav-menu').contains(event.target);
+
+            if (!isClickInside) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
