@@ -388,8 +388,7 @@ body.dark-mode .resource h3, body.dark-mode .resource p {
 
 /* Footer */
 .footer {
-    background-color: #333;
-    color: white;
+    color: gray;
     padding: 20px;
     text-align: center;
     border-top: 1px solid #444;
