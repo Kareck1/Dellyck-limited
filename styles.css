@@ -84,7 +84,9 @@ body.dark-mode .expand-dark-mode {
     display: block;
     margin: 0 auto; /* Centers the video */
     border-radius: 15px; /* Adjust this value to make the edges more or less rounded */
+    pointer-events: none; /* Disable click interactions */
 }
+
 
 .icon {
     position: absolute;
