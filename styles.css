@@ -269,6 +269,12 @@ body.dark-mode .team-member {
 body.dark-mode .team-member h4, body.dark-mode .team-member p {
     color: #f5f5f5;
 }
+body {
+    -webkit-user-select: none; /* Disable text selection for Safari */
+    -moz-user-select: none;    /* Disable text selection for Firefox */
+    -ms-user-select: none;     /* Disable text selection for IE/Edge */
+    user-select: none;         /* Disable text selection for modern browsers */
+}
 /* Client Logos */
 .client-logos {
     padding: 20px;
