@@ -543,8 +543,7 @@ body.dark-mode .footer {
 
 
 
-
-/* Top Navigation Bar */
+/* Top Bar Styles */
 .top-bar {
     background-color: #ffffff;
     padding: 10px 0;
@@ -623,6 +622,28 @@ body.dark-mode .footer {
     border-radius: 5px;
     font-size: 18px;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    .top-nav li {
+        margin: 10px 0;
+    }
+    .main-nav {
+        flex-direction: column;
+    }
+    .main-nav a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    .banner {
+        padding: 15px;
+    }
+}
+
 
 
 
