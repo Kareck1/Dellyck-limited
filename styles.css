@@ -109,11 +109,11 @@ html, body {
         }
 
         .explore-button {
-            background: linear-gradient(90deg, #FF6347, #FF4500); /* Tomato and OrangeRed */
+         background: linear-gradient(90deg, #57140f, #FF4500); /* Tomato and OrangeRed */
         }
 
         .call-button {
-            background: linear-gradient(90deg, #32CD32, #00FF7F); /* LimeGreen and SpringGreen */
+            background: linear-gradient(90deg, #32CD32, #57140f); /* LimeGreen and SpringGreen */
         }
 
 
