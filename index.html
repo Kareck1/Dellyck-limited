@@ -41,175 +41,6 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dellyck Limited</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .app-showcase-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .app-showcase {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .app {
-            min-width: 50%;
-            max-width: 50%;
-            background: none; /* Removed background */
-            padding: 20px;
-            border-radius: 10px;
-            box-sizing: border-box;
-        }
-
-        .app-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            animation: fadeIn 1s ease-in-out; /* Added animation */
-        }
-
-        .app-description {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .app-description h2 {
-            margin: 10px 0;
-            color: #333;
-        }
-
-        .app-description p {
-            color: #555;
-        }
-
-        .nav-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .nav-arrow.left {
-            left: 10px;
-        }
-
-        .nav-arrow.right {
-            right: 10px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
-</head>
-<body>
-    <!-- Existing content here -->
-    <div class="app-showcase-container">
-        <button class="nav-arrow left" onclick="scrollLeft()">&#10094;</button>
-        <div class="app-showcase" id="appShowcase">
-            <div class="app">
-                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e412421d40df48a35d763a_smart4.webp" alt="Smart App 4" class="app-image">
-                <div class="app-description">
-                    <h2>Smart App 4</h2>
-                    <p>This app helps you manage your daily tasks efficiently with an intuitive interface.</p>
-                </div>
-            </div>
-            <div class="app">
-                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e416b8f62bdd063eb7ddf6_smart6.webp" alt="Smart App 6" class="app-image">
-                <div class="app-description">
-                    <h2>Smart App 6</h2>
-                    <p>This app offers real-time collaboration tools to enhance team productivity.</p>
-                </div>
-            </div>
-            <div class="app">
-                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e4124d6216742269514364_smart3.webp" alt="Smart App 3" class="app-image">
-                <div class="app-description">
-                    <h2>Smart App 3</h2>
-                    <p>This app provides analytics and insights to help you make informed business decisions.</p>
-                </div>
-            </div>
-        </div>
-        <button class="nav-arrow right" onclick="scrollRight()">&#10095;</button>
-    </div>
-
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/67a25f313a8427326079b329/1ij947n9h';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-
-        let currentIndex = 0;
-
-        function scrollLeft() {
-            const showcase = document.getElementById('appShowcase');
-            const apps = document.querySelectorAll('.app');
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : apps.length - 1;
-            const offset = -currentIndex * 50;
-            showcase.style.transform = `translateX(${offset}%)`;
-        }
-
-        function scrollRight() {
-            const showcase = document.getElementById('appShowcase');
-            const apps = document.querySelectorAll('.app');
-            currentIndex = (currentIndex < apps.length - 1) ? currentIndex + 1 : 0;
-            const offset = -currentIndex * 50;
-            showcase.style.transform = `translateX(${offset}%)`;
-        }
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
         <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon expand-dark-mode" onclick="toggleDarkMode()">
         <div class="hamburger" onclick="toggleMenu()">
@@ -281,7 +112,181 @@ s0.parentNode.insertBefore(s1,s0);
                 <h3>Creative Web Design</h3>
                 <p>Designing visually captivating and highly functional websites.</p>
             </div>
+        </div>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    <style>
+        .app-showcase-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .app-showcase {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .app {
+            min-width: 50%;
+            max-width: 50%;
+            background: none;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 768px) {
+            .app {
+                min-width: 25%;
+                max-width: 25%;
+            }
+        }
+
+        .app-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .app-description {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .app-description h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .app-description p {
+            color: #555;
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            transition: background-color 0.3s;
+        }
+
+        .nav-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .nav-arrow.left {
+            left: 10px;
+        }
+
+        .nav-arrow.right {
+            right: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon expand-dark-mode" onclick="toggleDarkMode()">
+        <div class="hamburger" onclick="toggleMenu()">
+            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
         </div>
+    </div>
+
+    <div class="app-showcase-container">
+        <button class="nav-arrow left" onclick="scrollLeft()">&#10094;</button>
+        <div class="app-showcase" id="appShowcase">
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e412421d40df48a35d763a_smart4.webp" alt="Smart App 4" class="app-image">
+                <div class="app-description">
+                    <h2>Smart App 4</h2>
+                    <p>This app helps you manage your daily tasks efficiently with an intuitive interface.</p>
+                </div>
+            </div>
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e416b8f62bdd063eb7ddf6_smart6.webp" alt="Smart App 6" class="app-image">
+                <div class="app-description">
+                    <h2>Smart App 6</h2>
+                    <p>This app offers real-time collaboration tools to enhance team productivity.</p>
+                </div>
+            </div>
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e4124d6216742269514364_smart3.webp" alt="Smart App 3" class="app-image">
+                <div class="app-description">
+                    <h2>Smart App 3</h2>
+                    <p>This app provides analytics and insights to help you make informed business decisions.</p>
+                </div>
+            </div>
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/6414624bf04405fe84eaf4b1_friends%20home-p-1080.webp" alt="Friends Home" class="app-image">
+                <div class="app-description">
+                    <h2>Friends Home</h2>
+                    <p>This app connects friends and family, allowing them to share updates and stay in touch.</p>
+                </div>
+            </div>
+        </div>
+        <button class="nav-arrow right" onclick="scrollRight()">&#10095;</button>
+    </div>
+
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67a25f313a8427326079b329/1ij947n9h';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+
+        let currentIndex = 0;
+
+        function scrollLeft() {
+            const showcase = document.getElementById('appShowcase');
+            const apps = document.querySelectorAll('.app');
+            currentIndex = (currentIndex > 1) ? currentIndex - 2 : apps.length - 2;
+            const offset = -currentIndex * 50;
+            showcase.style.transform = `translateX(${offset}%)`;
+        }
+
+        function scrollRight() {
+            const showcase = document.getElementById('appShowcase');
+            const apps = document.querySelectorAll('.app');
+            currentIndex = (currentIndex < apps.length - 2) ? currentIndex + 2 : 0;
+            const offset = -currentIndex * 50;
+            showcase.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         <h2 class="cards-title">Meet Our Team</h2>
         <div class="team-section">
@@ -330,52 +335,6 @@ s0.parentNode.insertBefore(s1,s0);
                 <a href="resources/xyz-corp-case-study.pdf" download>Download</a>
             </div>
         </div>
-
-
-
-
-
-
-
-
-<!-- Apps Section -->
-<h2 class="cards-title">Our Apps</h2>
-<div class="apps-section">
-    <div class="app">
-        <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e412421d40df48a35d763a_smart4.webp" alt="App Image 1">
-        <div class="app-description">
-            <h3>App Name 1</h3>
-            <p>This app is designed to streamline your daily tasks and enhance productivity.</p>
-        </div>
-    </div>
-    <div class="app">
-        <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e416b8f62bdd063eb7ddf6_smart6.webp" alt="App Image 2">
-        <div class="app-description">
-            <h3>App Name 2</h3>
-            <p>An innovative app that brings your ideas to life with ease and efficiency.</p>
-        </div>
-    </div>
-    <div class="app">
-        <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e4124d6216742269514364_smart3.webp" alt="App Image 3">
-        <div class="app-description">
-            <h3>App Name 3</h3>
-            <p>Stay connected and manage your communications effortlessly with this app.</p>
-        </div>
-    </div>
-    <div class="app">
-        <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e412421d40df48a35d763a_smart4.webp" alt="App Image 4">
-        <div class="app-description">
-            <h3>App Name 4</h3>
-            <p>This app offers a comprehensive suite of tools for business management.</p>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
 
 
 
