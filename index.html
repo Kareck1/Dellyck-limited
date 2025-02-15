@@ -1,664 +1,430 @@
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden; /* Prevent scrolling */
-    transition: background-color 1s ease-in-out, color 1s ease-in-out;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* Floating Action Icons whatsapp and google*/
-.quick-float {
-    position: fixed;
-    bottom: 20px; /* Position it at the bottom of the screen */
-    left: 20px;   /* Position it to the left side of the screen */
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Space between the two icons */
-}
-
-.quick-float a {
-    display: inline-block;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.quick-float a:hover {
-    transform: scale(1.1);
-}
-
-.quick-float .quick-float-icon {
-    width: 35px; /* Slightly smaller than before */
-    height: 35px; /* Slightly smaller than before */
-    display: block;
-    margin: auto;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67a25f313a8427326079b329/1ij947n9h';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dellyck Limited</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <h1 class="animation" onclick="location.reload();">Dellyck Limited<img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo"></h1>
+        <p>Empowering Your Business with Innovative Solutions</p>
 
 
 
 
 
+<div class="button-container">
+    <button class="animated-button explore-button" onclick="location.href='products.html'">
+        <span>Explore Our Products</span>
+    </button>
+    <button class="animated-button call-button" onclick="location.href='tel:+1234567890'">
+        <span>Call Us</span>
+    </button>
+</div>
 
 
 
 
+        
+        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon expand-dark-mode" onclick="toggleDarkMode()">
+        <div class="hamburger" onclick="toggleMenu()">
+            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+        <div class="scrollable-cards-container" id="scrollable-cards-container">
+            <div class="scrollable-cards">
+                <div class="card" id="ITSupport" style="background-image: url('https://img.freepik.com/premium-photo/data-scientist-working-with-modern-technology_1288657-22361.jpg?w=740');" onclick="location.href='it_support.html'">
+                    <div class="card-content">
+                        <h3>IT Support</h3>
+                    </div>
+                </div>
+<div class="card" id="WebDesign" style="background-image: url('https://github.com/Kareck1/Dellyck-limited/blob/main/web.jpg?raw=true');" onclick="location.href='web_design.html'">
+    <div class="card-content">
+        <h3>Web Design</h3>
+    </div>
+</div>
+
+<div class="card" id="App Build" style="background-image: url('https://github.com/Kareck1/Dellyck-limited/blob/main/app%20build.jpg?raw=true');" onclick="location.href='app_build.html'">
+    <div class="card-content">
+        <h3>App Build</h3>
+    </div>
+</div>
+
+                <div class="card" id="HRConsulting" style="background-image: url('https://github.com/Kareck1/Dellyck-limited/blob/main/Hr.jpg?raw=true');" onclick="location.href='hr_consulting.html'">
+                    <div class="card-content">
+                        <h3>HR Consulting</h3>
+                    </div>
+                </div>
+                <div class="card" id="SoftwareCreation" style="background-image: url('https://github.com/Kareck1/Dellyck-limited/blob/main/Software.jpg?raw=true');" onclick="location.href='software_creation.html'">
+                    <div class="card-content">
+                        <h3>Software Creation</h3>
+                    </div>
+                </div>
+                <div class="card" id="DigitalMarketing" style="background-image: url('https://github.com/Kareck1/Dellyck-limited/blob/main/marketing.jpg?raw=true');" onclick="location.href='digital_marketing.html'">
+                    <div class="card-content">
+                        <h3>Digital Marketing</h3>
+                    </div>
+                </div>
+                <div class="card" id="EventPlanning" style="background-image: url('https://github.com/Kareck1/Dellyck-limited/blob/main/event.jpg?raw=true');" onclick="location.href='event_planning.html'">
+                    <div class="card-content">
+                        <h3>Event Planning</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Sections -->
+        <h2 class="cards-title">Service Highlights</h2>
+        
+        <!-- Video below Service Highlights -->
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="service-highlights">
+            <div class="highlight">
+                <h3>Comprehensive IT Support</h3>
+                <p>Ensuring your business operates smoothly with round-the-clock support.</p>
+            </div>
+            <div class="highlight">
+                <h3>Creative Web Design</h3>
+                <p>Designing visually captivating and highly functional websites.</p>
+            </div>
+        </div>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    <style>
+        .app-showcase-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .app-showcase {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .app {
+            min-width: 50%;
+            max-width: 50%;
+            background: none;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 768px) {
+            .app {
+                min-width: 25%;
+                max-width: 25%;
+            }
+        }
+
+        .app-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .app-description {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .app-description h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .app-description p {
+            color: #555;
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            transition: background-color 0.3s;
+        }
+
+        .nav-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .nav-arrow.left {
+            left: 10px;
+        }
+
+        .nav-arrow.right {
+            right: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon expand-dark-mode" onclick="toggleDarkMode()">
+        <div class="hamburger" onclick="toggleMenu()">
+            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
+        </div>
+    </div>
+
+    <div class="app-showcase-container">
+        <button class="nav-arrow left" onclick="scrollLeft()">&#10094;</button>
+        <div class="app-showcase" id="appShowcase">
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e412421d40df48a35d763a_smart4.webp" alt="Smart App 4" class="app-image">
+                <div class="app-description">
+                    <h2>Smart App 4</h2>
+                    <p>This app helps you manage your daily tasks efficiently with an intuitive interface.</p>
+                </div>
+            </div>
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e416b8f62bdd063eb7ddf6_smart6.webp" alt="Smart App 6" class="app-image">
+                <div class="app-description">
+                    <h2>Smart App 6</h2>
+                    <p>This app offers real-time collaboration tools to enhance team productivity.</p>
+                </div>
+            </div>
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/63e4124d6216742269514364_smart3.webp" alt="Smart App 3" class="app-image">
+                <div class="app-description">
+                    <h2>Smart App 3</h2>
+                    <p>This app provides analytics and insights to help you make informed business decisions.</p>
+                </div>
+            </div>
+            <div class="app">
+                <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/6414624bf04405fe84eaf4b1_friends%20home-p-1080.webp" alt="Friends Home" class="app-image">
+                <div class="app-description">
+                    <h2>Friends Home</h2>
+                    <p>This app connects friends and family, allowing them to share updates and stay in touch.</p>
+                </div>
+            </div>
+        </div>
+        <button class="nav-arrow right" onclick="scrollRight()">&#10095;</button>
+    </div>
+
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67a25f313a8427326079b329/1ij947n9h';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+
+        let currentIndex = 0;
+
+        function scrollLeft() {
+            const showcase = document.getElementById('appShowcase');
+            const apps = document.querySelectorAll('.app');
+            currentIndex = (currentIndex > 1) ? currentIndex - 2 : apps.length - 2;
+            const offset = -currentIndex * 50;
+            showcase.style.transform = `translateX(${offset}%)`;
+        }
+
+        function scrollRight() {
+            const showcase = document.getElementById('appShowcase');
+            const apps = document.querySelectorAll('.app');
+            currentIndex = (currentIndex < apps.length - 2) ? currentIndex + 2 : 0;
+            const offset = -currentIndex * 50;
+            showcase.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        <h2 class="cards-title">Meet Our Team</h2>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member">
+                <h4>KAREMERA</h4>
+                <p>CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member">
+                <h4>David</h4>
+                <p>CTO</p>
+            </div>
+        </div>
+        
+        <h2 class="cards-title">Our Clients</h2>
+        
+        <div class="client-logos">
+            <img src="https://images.seeklogo.com/logo-png/9/1/mtn-logo-png_seeklogo-95716.png?v=1957908387074490032">
+            <img src="https://mailmeteor.com/logos/assets/PNG/Microsoft_Logo_512px.png" alt="Microsoft Logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8GMw5aEhvfEtxTybaScYux-qRtQN-l4k6w&s">
+        </div>
+
+        <h2 class="cards-title">Awards & Certifications</h2>
+        <div class="awards-section">
+            <div class="award">
+                <h3>Best IT Service Provider 2024</h3>
+                <p>Awarded for exceptional service and support.</p>
+            </div>
+            <div class="award">
+                <h3>ISO 9001 Certification</h3>
+                <p>Recognized for quality management systems.</p>
+            </div>
+        </div>
+
+        <h2 class="cards-title">Resource Center</h2>
+        <div class="resource-center">
+            <div class="resource">
+                <h3>Whitepaper on Cybersecurity</h3>
+                <p>Download our comprehensive guide to protect your business.</p>
+                <a href="resources/cybersecurity-whitepaper.pdf" download>Download</a>
+            </div>
+            <div class="resource">
+                <h3>Case Study: XYZ Corp</h3>
+                <p>Learn how we helped XYZ Corp achieve their goals.</p>
+                <a href="resources/xyz-corp-case-study.pdf" download>Download</a>
+            </div>
+        </div>
 
 
 
 
+                 <h2 class="cards-title">Contact Us</h2>
+        <div class="contact-form">
+            <form action="submit_contact_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
 
+        <h2 class="cards-title">Connect With Us</h2>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@jerrickkent" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/128/3938/3938037.png" alt="YouTube" class="animated-icon">
+             </a>
 
-body.dark-mode {
-    background-color: #333;
-    color: #f5f5f5;
-}
-html, body {
-    overflow-x: hidden; /* Prevent side-scrolling */
-}
-.banner {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    transition: background-color 1s ease-in-out;
-}
-.banner.dark-mode {
-    background-color: #444;
-}
-.banner h1 {
-    margin: 0;
-    font-size: 2.5em;
-    display: inline-block;
-    vertical-align: middle;
-    color: inherit;
-    animation: shake 0.5s;
-    animation-iteration-count: 6;
-}
-.banner p {
-    margin: 10px 0;
-    color: inherit;
-    transition: color 1s ease-in-out;
-}
-.banner img {
-    max-width: 100%;
-    height: auto;
-}
+            <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" class="animated-icon">
+            </a>
+            <a href="https://x.com/jerrick_kent/?mx=2" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="Twitter" class="animated-icon">
+            </a>
+            <a href="https://wa.me/250783622438" target="_blank">
+             <img src="https://cdn-icons-png.flaticon.com/128/3992/3992601.png" alt="WhatsApp" class="animated-icon">
+            </a>
 
+            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/3046/3046120.png" alt="TikTok" class="animated-icon">
+            </a>
+            <a href="tel:+250783622438">
+  <img src="https://cdn-icons-png.flaticon.com/128/724/724664.png" alt="Call Icon">
+</a>
 
+        </div>
 
+<!-- Footer Section -->
+<footer class="footer">
+    <p>© 2025 Dellyck Limited. All rights reserved.</p>
+</footer>
 
+<!-- Floating icons for WhatsApp and Google Maps -->
+<div class="quick-float">
+    <a class="whatsapp" target="_blank" rel="noopener nofollow" href="https://api.whatsapp.com/send?phone=2502438&text=Hi, Jerrick Kent need more information about Jerrick Kent. please contact me.">
+        <img class="quick-float-icon" src="https://jerrickkent.websites.co.in/img/svg-icons/whatsapp.svg" alt="WhatsApp" title="message Jerrick Kent on WhatsApp">
+    </a>
+    
+    <a class="google-map" target="_blank" rel="noopener nofollow" href="https://www.google.com/maps/?q=19.076,72.8774">
+        <img class="quick-float-icon" src="https://jerrickkent.websites.co.in/img/svg-icons/google.svg" alt="Google Map" title="view Jerrick Kent on google map">
+    </a>
+</div>
 
-
-
-
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.animated-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 16px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.animated-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.animated-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: transform 0.4s ease;
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-}
-
-.animated-button:active::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* First Button - Explore */
-.explore-button {
-    background: linear-gradient(90deg, #FF5733, #C70039); /* Vibrant red-orange gradient */
-}
-
-/* Second Button - Contact */
-.contact-button {
-    background: linear-gradient(90deg, #4CAF50, #009688); /* Green to teal gradient */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.spinning-logo {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-    animation: spin 10s linear infinite;
-    vertical-align: middle;
-}
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-10px); }
-    40%, 80% { transform: translateX(10px); }
-}
-@keyframes expandDarkMode {
-    0% {
-        clip-path: circle(0% at 90% 10%);
+<!-- Script Section -->
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("navMenu");
+        if (menu.style.display === "flex") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "flex";
+        }
     }
-    100% {
-        clip-path: circle(150% at 90% 10%);
-    }
-}
-body.dark-mode .expand-dark-mode {
-    animation: expandDarkMode 1s forwards;
-}
 
-.background-video {
-    width: 100%;
-    height: auto;
-    max-height: 100vh; /* Ensures the video fits within the viewport height */
-    display: block;
-    margin: 0 auto; /* Centers the video */
-    border-radius: 15px; /* Adjust this value to make the edges more or less rounded */
-    pointer-events: none; /* Disable click interactions */
-}
+    function closeMenu() {
+        var menu = document.getElementById("navMenu");
+        menu.style.display = "none";
+    }
 
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .cards-title, .card-content, .social-icons img');
+        elements.forEach(function(element) {
+            element.classList.toggle('dark-mode');
+        });
+    }
 
-.icon {
-    position: absolute;
-    top: 20px;
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    filter: invert(0%);
-    transition: filter 1s ease-in-out;
-}
-body.dark-mode .icon {
-    filter: invert(100%);
-}
-.signup-icon {
-    right: 60px;
-}
-.dark-mode-icon {
-    right: 20px;
-}
-.hamburger {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-}
-.hamburger-icon {
-    width: 35px;
-    height: 35px;
-    filter: invert(0%);
-    transition: filter 1s ease-in-out;
-}
-body.dark-mode .hamburger-icon {
-    filter: invert(100%);
-}
-.nav-menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    width: 150px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 1s ease-in-out;
-}
-.nav-menu.dark-mode {
-    background-color: #444;
-}
-.nav-menu a {
-    padding: 10px 20px;
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    transition: color 1s ease-in-out;
-}
-.cards-title {
-    text-align: center;
-    margin: 20px;
-    font-size: 2em;
-    color: #333;
-    animation: fadeIn 2s;
-}
-body.dark-mode .cards-title {
-    color: #f5f5f5;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-.scrollable-cards-container {
-    display: flex;
-    overflow-x: auto; /* Allow manual horizontal scrolling */
-    padding: 10px;
-    position: relative;
-    scroll-behavior: smooth; /* Smooth scrolling */
-    width: 100%; /* Full width */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
-}
-.scrollable-cards-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
-}
-.scrollable-cards {
-    display: flex;
-    gap: 20px; /* Add space between cards */
-}
-.card {
-    flex: 0 0 auto; /* Keep cards in their size and not shrink */
-    background-size: cover;
-    background-position: center;
-    width: 200px; /* Make the card larger */
-    height: 200px; /* Make the card larger */
-    position: relative;
-    border-radius: 30px; /* Rounded corners */
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    animation: float 2s infinite;
-}
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-.card:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-.card-content {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    transition: background 0.5s ease-in-out;
-}
-body.dark-mode .card-content {
-    background: rgba(255, 255, 255, 0.1);
-}
-.card-content h3, .card-content p {
-    margin: 0;
-}
-.card-content h3 {
-    font-size: 1.5em; /* Larger font size */
-    margin-bottom: 10px;
-}
-.card-content p {
-    font-size: 1em; /* Paragraph text size */
-}
-/* Service Highlights */
-.service-highlights {
-    padding: 20px;
-    text-align: center;
-    animation: fadeIn 2s;
-}
-.highlight {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-}
-.highlight h3 {
-    margin-top: 0;
-}
-body.dark-mode .highlight {
-    background-color: #444;
-    border-color: #666;
-}
-body.dark-mode .highlight h3, body.dark-mode .highlight p {
-    color: #f5f5f5;
-}
-/* Team Section */
-.team-section {
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.team-member {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    width: 200px;
-    text-align: center;
-}
-.team-member img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
-body.dark-mode .team-member {
-    background-color: #444;
-    border-color: #666;
-}
-body.dark-mode .team-member h4, body.dark-mode .team-member p {
-    color: #f5f5f5;
-}
-body {
-    -webkit-user-select: none; /* Disable text selection for Safari */
-    -moz-user-select: none;    /* Disable text selection for Firefox */
-    -ms-user-select: none;     /* Disable text selection for IE/Edge */
-    user-select: none;         /* Disable text selection for modern browsers */
-}
-/* Client Logos */
-.client-logos {
-    padding: 20px;
-    text-align: center;
-}
-.client-logos img {
-    margin: 10px;
-    max-width: 100px;
-    transition: transform 0.3s;
-}
-.client-logos img:hover {
-    transform: scale(1.1);
-}
-/* Awards Section */
-.awards-section {
-    padding: 20px;
-    text-align: center;
-}
-.award {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-}
-.award h3 {
-    margin-top: 0;
-}
-body.dark-mode .award {
-    background-color: #444;
-    border-color: #666;
-}
-body.dark-mode .award h3, body.dark-mode .award p {
-    color: #f5f5f5;
-}
-/* Resource Center */
-.resource-center {
-    padding: 20px;
-    text-align: center;
-}
-.resource {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    text-align: left;
-}
-.resource h3 {
-    margin-top: 0;
-}
-body.dark-mode .resource {
-    background-color: #444;
-    border-color: #666;
-}
-body.dark-mode .resource h3, body.dark-mode .resource p {
-    color: #f5f5f5;
-}
+    document.addEventListener('click', function(event) {
+        var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.querySelector('.nav-menu').contains(event.target);
 
-/* Contact Form */
-.contact-form {
-    padding: 20px;
-}
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.contact-form label {
-    margin-top: 10px;
-}
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-.contact-form button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.contact-form button:hover {
-    background-color: #45a049;
-}
+        if (!isClickInside) {
+            closeMenu();
+        }
+    });
+</script>
 
-/* Social Icons */
-.social-icons {
-    padding: 20px;
-    text-align: center;
-}
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: transform 0.3s, filter 0.3s;
-}
-.social-icons img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-.animated-icon {
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Footer */
-.footer {
-    color: gray;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #444;
-    box-sizing: border-box;
-    transition: background-color 1s ease-in-out, color 1s ease-in-out;
-}
-body.dark-mode .footer {
-    background-color: #222;
-    color: #ccc;
-}
-.footer p {
-    margin: 0;
-}
-
-/* Responsive design for various screen sizes */
-@media (max-width: 480px) {
-    .banner h1 {
-        font-size: 1.8em;
-    }
-    .icon {
-        width: 30px;
-        height: 30px;
-    }
-    .nav-menu {
-        width: 100px;
-        height: 100px;
-    }
-    .nav-menu a {
-        padding: 8px 16px;
-    }
-    .social-icons img {
-        width: 20px;
-        height: 20px;
-    }
-    .footer {
-        padding: 15px;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .banner {
-        padding: 30px;
-    }
-    .banner h1 {
-        font-size: 2.2em;
-    }
-    .icon {
-        width: 35px;
-        height: 35px;
-    }
-    .nav-menu {
-        width: 120px;
-        height: 120px;
-    }
-    .nav-menu a {
-        padding: 10px 20px;
-    }
-    .social-icons img {
-        width: 22px;
-        height: 22px;
-    }
-    .footer {
-        padding: 18px;
-    }
-}
-
-@media (min-width: 769px) {
-    .banner {
-        padding: 40px;
-    }
-    .banner h1 {
-        font-size: 2.5em;
-    }
-    .banner p {
-        margin: 20px 0;
-    }
-    .nav-menu {
-        padding: 20px;
-    }
-    .nav-menu a {
-        padding: 12px 24px;
-    }
-    .footer {
-        padding: 20px;
-    }
-}
-.content {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-    transition: color 1s ease-in-out;
-}
-.content-section {
-    display: none;
-    text-align: left;
-}
-.content-section.active {
-    display: block;
-}
-
-/* Service Page Buttons */
-.cta-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 20px 0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-.cta-button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-}
-
-/* Animation for Service Page */
-.service-details ul {
-    list-style-type: none;
-    padding: 0;
-}
-.service-details ul li {
-    background-color: #e0e0e0;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-.service-details ul li:hover {
-    background-color: #d5d5d5;
-}
+</body>
+</html>
