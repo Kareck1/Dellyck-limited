@@ -10,25 +10,23 @@
             width: 100%;
             height: auto;
             border-radius: 15px;
-            pointer-events: auto;
+            cursor: pointer;
         }
-        .service-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-        .service:hover video {
-            transform: scale(1.05);
-            transition: transform 0.3s;
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 9999;
         }
     </style>
 </head>
 <body>
     <!-- Services Section -->
     <div class="service">
-        <video autoplay loop muted playsinline>
+        <video id="video1" autoplay loop muted playsinline>
             <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2002.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -38,7 +36,7 @@
         </div>
     </div>
     <div class="service">
-        <video autoplay loop muted playsinline>
+        <video id="video2" autoplay loop muted playsinline>
             <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2003.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -48,7 +46,7 @@
         </div>
     </div>
     <div class="service">
-        <video autoplay loop muted playsinline>
+        <video id="video3" autoplay loop muted playsinline>
             <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2004.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -58,7 +56,7 @@
         </div>
     </div>
     <div class="service">
-        <video autoplay loop muted playsinline>
+        <video id="video4" autoplay loop muted playsinline>
             <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2001.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -67,5 +65,29 @@
             <p>Scalable and secure cloud solutions.</p>
         </div>
     </div>
+
+    <script>
+        const videos = document.querySelectorAll('video');
+        
+        videos.forEach(video => {
+            video.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    video.requestFullscreen().catch(err => {
+                        console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+
+            video.addEventListener('fullscreenchange', (event) => {
+                if (document.fullscreenElement) {
+                    video.classList.add('fullscreen');
+                } else {
+                    video.classList.remove('fullscreen');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
