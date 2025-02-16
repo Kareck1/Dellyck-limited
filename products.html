@@ -3,87 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dellyck Limited - Online Store</title>
-    <link rel="stylesheet" href="styles.css">
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products and Services</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
-        .container {
-            display: flex;
-            overflow-x: auto;
-            padding: 20px;
-            gap: 20px;
-            width: 100%;
-            scroll-snap-type: x mandatory;
-        }
-        .product, .service {
-            min-width: 60%;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeIn 1s ease;
-            scroll-snap-align: center;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-        .product img, .service img {
-            width: 50%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-        .product:hover img, .service:hover img {
-            transform: scale(1.1);
-        }
-        .product-content, .service-content {
-            padding: 20px;
-            width: 50%;
-        }
-        .product-content h3, .service-content h3 {
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        .product-content p, .service-content p {
-            font-size: 1em;
-        }
-    </style>
-</head>
-<body>
-
-        <!-- ... Additional product cards ... -->
-       <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dellyck Limited</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -91,7 +10,18 @@
             width: 100%;
             height: auto;
             border-radius: 15px;
-            pointer-events: none;
+            pointer-events: auto;
+        }
+        .service-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .service:hover video {
+            transform: scale(1.05);
+            transition: transform 0.3s;
         }
     </style>
 </head>
@@ -139,30 +69,3 @@
     </div>
 </body>
 </html>
-
-        <div class="service">
-            <img src="https://cdn.prod.website-files.com/63e28156e116e460c9f99ae1/6414624bf04405fe84eaf4b1_friends%20home-p-800.webp" alt="Service Image">
-            <div class="service-content">
-                <h3>Cloud Solutions</h3>
-                <p>Scalable and secure cloud solutions.</p>
-            </div>
-        </div>
-        <!-- Add more services as needed -->
-    </div>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('show-menu');
-        }
-    </script>
-</body>
-</html>
-
-    </footer>
-
-</body>
-</html>
-
