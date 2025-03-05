@@ -102,8 +102,21 @@
         .product img:hover {
             transform: scale(1.05);
         }
+        .product video {
+            flex: 2;
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: transform 0.3s;
+        }
+        .product video:hover {
+            transform: scale(1.05);
+        }
         @media (min-width: 1024px) {
-            .product img {
+            .product img, .product video {
                 width: 200px;
             }
         }
@@ -114,7 +127,7 @@
             .product-content {
                 padding: 20px;
             }
-            .product img {
+            .product img, .product video {
                 width: 100%;
                 height: auto;
             }
@@ -128,22 +141,6 @@
                 opacity: 1;
                 transform: translateX(0);
             }
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-        }
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s;
-        }
-        .social-icons img:hover {
-            transform: scale(1.2);
         }
         .footer {
             background-color: #f4f4f4;
@@ -187,10 +184,10 @@
             </div>
         </div>
         <div class="product">
-            <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/phone%20signup.png?raw=true" alt="Login Page">
+            <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/phone%20signup.png?raw=true" alt="Signup Page">
             <div class="product-content">
-                <h3>Login Page</h3>
-                <p>This standalone screenshot of a phone shows the login page. It's crucial for securing access to user accounts and data.</p>
+                <h3>Signup Page</h3>
+                <p>This standalone screenshot of a phone shows the signup page. It ensures users can create accounts and access the app.</p>
             </div>
         </div>
         <div class="product">
@@ -208,17 +205,26 @@
             </div>
         </div>
 
-        <h2 class="cards-title">Connect With Us</h2>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" class="animated-icon">
-            </a>
-            <a href="https://x.com/jerrick_kent/?mx=2" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="Twitter" class="animated-icon">
-            </a>
-            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/3046/3046120.png" alt="TikTok" class="animated-icon">
-            </a>
+        <h2 class="cards-title">Our Videos</h2>
+        <div class="product">
+            <video autoplay loop muted playsinline>
+                <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2002.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="product-content">
+                <h3>Video Title 1</h3>
+                <p>This video showcases our first product feature, demonstrating its capabilities and benefits.</p>
+            </div>
+        </div>
+        <div class="product">
+            <video autoplay loop muted playsinline>
+                <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2003.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="product-content">
+                <h3>Video Title 2</h3>
+                <p>This video highlights another key aspect of our products, providing an in-depth look at its functionalities.</p>
+            </div>
         </div>
 
         <footer class="footer">
@@ -257,7 +263,7 @@
             }
         });
 
-        const images = document.querySelectorAll('.product img');
+        const images = document.querySelectorAll('.product img, .product video');
 
         images.forEach(img => {
             img.addEventListener('click', () => {
