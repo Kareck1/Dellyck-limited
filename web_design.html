@@ -5,16 +5,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Design - Dellyck Limited</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .banner {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .banner p {
+            margin: 0.5rem 0 1rem;
+        }
+        .banner img.spinning-logo {
+            width: 60px;
+            height: 60px;
+            animation: spin 4s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .nav-menu a {
+            color: #333;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .nav-menu a:hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .cards-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .service-details {
+            margin: 2rem 0;
+        }
+        .service-details h3 {
+            font-size: 1.5rem;
+        }
+        .service-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .service-details ul li {
+            background-color: #fff;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        .service-details ul li:hover {
+            transform: scale(1.05);
+        }
+        .service-details ul li .details {
+            display: none;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .service-details ul li.active .details {
+            display: block;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            display: none;
+        }
+        .service-details ul li.active .close-button {
+            display: block;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            margin: 0 10px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+        .footer {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <div class="banner">
-        <h1 class="animation" onclick="location.reload();">Dellyck Limited<img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo"></h1>
+        <h1>Dellyck Limited</h1>
         <p>Empowering Your Business with Innovative Solutions</p>
-        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon expand-dark-mode" onclick="toggleDarkMode()">
-        <div class="hamburger" onclick="toggleMenu()">
-            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
-        </div>
-        <div class="nav-menu" id="navMenu">
+        <img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo">
+        <div class="nav-menu">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="services.html">Our Services</a>
@@ -28,65 +183,74 @@
         <div class="service-details">
             <h3>Our Web Design Services Include:</h3>
             <ul>
-                <li>Responsive Web Design</li>
-                <li>UI/UX Design</li>
-                <li>E-commerce Website Design</li>
-                <li>Website Redesign</li>
-                <li>SEO Optimization</li>
+                <li onclick="toggleDetails(this)">
+                    Responsive Web Design
+                    <div class="details">
+                        <button class="close-button" onclick="closeDetails(this)">×</button>
+                        <p>Our responsive web design ensures your website looks great on all devices, providing an optimal user experience whether on a desktop, tablet, or smartphone.</p>
+                        <div class="image-gallery">
+                            <img src="https://img.freepik.com/free-photo/ui-ux-representations-with-laptop_23-2150201871.jpg?t=st=1741202331~exp=1741205931~hmac=15906311db7c4f5f95101a81bdff56ca7d9d5c42b882f1492acca155b59bcfd6&w=1060" alt="Responsive Web Design 1">
+                            <img src="https://img.freepik.com/free-psd/restaurant-landing-page-template_23-2148466849.jpg?t=st=1741202568~exp=1741206168~hmac=860f919e8995521a91ebb00c93d3f26453120f5eb6cbc115858bf021107b7c2e&w=1480" alt="Responsive Web Design 2">
+                            <img src="https://img.freepik.com/free-vector/smart-home-management-application_23-2148627768.jpg?t=st=1741202615~exp=1741206215~hmac=9833aaa47739bcf5faeb54e015c8a841d602ed4b9d4e8bba1645e3d5208b53be&w=1060" alt="Responsive Web Design 3">
+                            <img src="https://img.freepik.com/free-vector/flat-design-web-designer-landing-page_23-2150333314.jpg?t=st=1741202638~exp=1741206238~hmac=b5bed7e1661059c4be9b5bcbe8d0850026551a01e12831180f021337857a5928&w=1380" alt="Responsive Web Design 4">
+                        </div>
+                    </div>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    UI/UX Design
+                    <div class="details">
+                        <button class="close-button" onclick="closeDetails(this)">×</button>
+                        <p>We create intuitive and engaging user interfaces and experiences that keep users coming back. Our designs are user-centered and focused on usability.</p>
+                        <div class="image-gallery">
+                            <img src="https://img.freepik.com/free-photo/representations-user-experience-interface-design_23-2150104491.jpg?t=st=1741202281~exp=1741205881~hmac=5d562eb1e00c353eedde128da7030e343c421fd271bff7a3b754ec7ee5c7e885&w=740" alt="UI/UX Design 1">
+                            <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?t=st=1741202118~exp=1741205718~hmac=28c20cb306182676d0d5c4adc54e8de5590669b8a05ac31e3d1988ec49b8d8d2&w=1060" alt="UI/UX Design 2">
+                            <img src="https://img.freepik.com/free-vector/gradient-ui-ux-elements-background_23-2149056159.jpg?t=st=1741202217~exp=1741205817~hmac=158f817201570bfe741e2de28378d59399a79f5326b5e5c30cd2482979136222&w=1060" alt="UI/UX Design 3">
+                            <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_52683-69316.jpg?t=st=1741202232~exp=1741205832~hmac=c2cdb39342db924b6c2dd50ac3cd2030e911e9ad86bb08e1b13a7f4ae8e347c3&w=1060" alt="UI/UX Design 4">
+                            <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149024129.jpg?t=st=1741202238~exp=1741205838~hmac=948ed8d50f399436bbf19a2f5efeaad8d3a82f06a69e39b30f8b9d46806c0b6b&w=1060" alt="UI/UX Design 5">
+                            <img src="https://img.freepik.com/premium-vector/gradient-ui-ux-design-banner_23-2151385154.jpg?w=1380" alt="UI/UX Design 6">
+                            <img src="https://img.freepik.com/free-vector/mobile-ui-ux-concept-illustration_114360-11697.jpg?t=st=1741202270~exp=1741205870~hmac=f6b0db4ec5ee44b12b9e030d1a06c1390fdff6ad5335f4b5e0576db7813c725a&w=1060" alt="UI/UX Design 7">
+                        </div>
+                    </div>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    E-commerce Website Design
+                    <div class="details">
+                        <button class="close-button" onclick="closeDetails(this)">×</button>
+                        <p>Our e-commerce website designs are optimized for conversions, making it easy for customers to browse, shop, and purchase your products online.</p>
+                        <div class="image-gallery">
+                            <img src="https://img.freepik.com/free-photo/side-view-woman-working-as-travel-agent_23-2150433450.jpg?t=st=1741203207~exp=1741206807~hmac=730759cdec1b0d5a260c9150160640e99c44f993c0a9bc7707d0f3691d9fde0b&w=1380" alt="E-commerce Design 1">
+                            <img src="https://img.freepik.com/free-photo/close-up-man-shopping-with-laptop_23-2149241375.jpg?t=st=1741202941~exp=1741206541~hmac=4547455398727e55a839a28dd9f688233ee932e3684f79d1d503d6aa3eade33f&w=1060" alt="E-commerce Design 2">
+                            <img src="https://img.freepik.com/free-psd/online-shopping-landing-page-template_23-2148582748.jpg?t=st=1741202956~exp=1741206556~hmac=d55956d657beac20609d4fd0f530ad3fa20e3a04b3353af21812cd3ccedc7bae&w=1380" alt="E-commerce Design 3">
+                            <img src="https://img.freepik.com/free-vector/online-business-page-template-with-photo_23-2148240509.jpg?t=st=1741203026~exp=1741206626~hmac=a8af4ce695c295e1492f18a12d4a73310670761df84e07d1b9a4555975c3fcca&w=1060" alt="E-commerce Design 4">
+                            <img src="https://img.freepik.com/free-vector/flat-laptop-online-payment-elements_23-2147678508.jpg?t=st=1741203037~exp=1741206637~hmac=f082803f3db7c06989b6401240f8a9e090912c0ecb45001ba9feb37644703f9b&w=740" alt="E-commerce Design 5">
+                            <img src="https://img.freepik.com/free-photo/medium-shot-people-working-together_23-2150628001.jpg?t=st=1741203057~exp=1741206657~hmac=aa99b9712aa8026783e8d393508d91ef40fb103d5920333c87f2ea6dbe5ca7e8&w=1060" alt="E-commerce Design 6">
+                            <img src="https://img.freepik.com/free-photo/successful-freelancer-does-online-shopping-with-his-credit-card_482257-90793.jpg?t=st=1741203175~exp=1741206775~hmac=d9ab66dd36d11474276319bb83a45381e7c239043bc28672e7cdcd16cd28edf6&w=1380" alt="E-commerce Design 7">
+                        </div>
+                    </div>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    SEO Optimization
+                    <div class="details">
+                        <button class="close-button" onclick="closeDetails(this)">×</button>
+                        <p>Our SEO optimization services ensure your website ranks well in search engines, driving more traffic and increasing visibility for your business.</p>
+                        <div class="image-gallery">
+                            <img src="https://img.freepik.com/free-vector/seo-scribbles_23-2147501329.jpg?t=st=1741203474~exp=1741207074~hmac=c6a25514a4fc7f9f1881245ca0760db25b85fdc722e3e29068a9cb89443f5cbc&w=740" alt="SEO Optimization 1">
+                            <img src="https://img.freepik.com/free-vector/seo-marketing-concept-with-research-symbols-world-map-magnifier_1284-14045.jpg?t=st=1741203502~exp=1741207102~hmac=28a59230fa8b30a563ecd8d6522ef38f04401495088a712ed69b19446db7461f&w=740" alt="SEO Optimization 2">
+                            <img src="https://img.freepik.com/free-photo/seo-links-webinar-hand-cyberspace-concept_53876-124928.jpg?t=st=1741203523~exp=1741207123~hmac=fa3ea7c2d8d73efc5bc8b9268bc277cef3362848d6475abf77f98fca27d2661d&w=740" alt="SEO Optimization 3">
+                            <img src="https://img.freepik.com/free-vector/seo-analytics-team-concept-illustration_114360-28694.jpg?t=st=1741203532~exp=1741207132~hmac=3eda704749b8eff5ac8f43c81001aac95b59ed94c020b2b3219f49da1d7a0429&w=740" alt="SEO Optimization 4">
+                            <img src="https://img.freepik.com/free-vector/seo-word-mouse-content-manager-people-it-flat-isometric-concept_126523-1772.jpg?t=st=1741203552~exp=1741207152~hmac=2a92f6cda6328c3e4f3da678a03dd65ccceb0f0cd00fc1009acafc97a3279d2d&w=740" alt="SEO Optimization 5">
+                        </div>
+                    </div>
+                </li>
             </ul>
-            <button class="cta-button" onclick="location.href='contact.html'">Get in Touch</button>
+            <a href="tel:+250783622438" class="cta-button">Get in Touch</a>
         </div>
         <h3>Why Choose Us?</h3>
         <p>At Dellyck Limited, we create stunning websites that not only look great but also perform exceptionally well. Our team of skilled designers is dedicated to bringing your vision to life.</p>
-
+        
         <h2 class="cards-title">Connect With Us</h2>
         <div class="social-icons">
             <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" class="animated-icon">
             </a>
-            <a href="https://x.com/jerrick_kent/?mx=2" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="Twitter" class="animated-icon">
-            </a>
-            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/128/3046/3046120.png" alt="TikTok" class="animated-icon">
-            </a>
-        </div>
-
-        <footer class="footer">
-            <p>© 2025 Dellyck Limited. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("navMenu");
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
-            }
-        }
-
-        function closeMenu() {
-            var menu = document.getElementById("navMenu");
-            menu.style.display = "none";
-        }
-
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .cards-title, .card-content, .social-icons img');
-            elements.forEach(function(element) {
-                element.classList.toggle('dark-mode');
-            });
-        }
-
-        document.addEventListener('click', function(event) {
-            var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.querySelector('.nav-menu').contains(event.target);
-
-            if (!isClickInside) {
-                closeMenu();
-            }
-        });
-    </script>
-</body>
-</html>
+            <a href="https://
