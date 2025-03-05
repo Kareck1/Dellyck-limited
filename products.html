@@ -6,27 +6,92 @@
     <title>Dellyck Limited</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .service {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .banner {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+        .banner img.spinning-logo {
+            width: 50px;
+            height: 50px;
+            animation: spin 4s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .hamburger {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+        .hamburger-icon {
+            width: 30px;
+            height: 30px;
+        }
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #444;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+        }
+        .nav-menu a {
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        .nav-menu a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .cards-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .product {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
             padding: 10px;
             border-radius: 15px;
+            background-color: #fff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .service:hover {
+        .product:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
-        .service-content {
+        .product-content {
             flex: 1;
             padding: 10px;
             animation: fadeIn 1s ease-in-out;
         }
-        .service video {
+        .product img {
             flex: 2;
-            width: 300px;
+            width: 150px;
             max-width: 100%;
             height: auto;
             border-radius: 15px;
@@ -34,22 +99,22 @@
             pointer-events: auto;
             transition: transform 0.3s;
         }
-        .service video:hover {
+        .product img:hover {
             transform: scale(1.05);
         }
         @media (min-width: 1024px) {
-            .service video {
+            .product img {
                 width: 200px;
             }
         }
         @media (max-width: 768px) {
-            .service {
+            .product {
                 flex-direction: column;
             }
-            .service-content {
+            .product-content {
                 padding: 20px;
             }
-            .service video {
+            .product img {
                 width: 100%;
                 height: auto;
             }
@@ -64,58 +129,140 @@
                 transform: translateX(0);
             }
         }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+        .footer {
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
-    <!-- Services Section -->
-    <div class="service">
-        <video autoplay loop muted playsinline>
-            <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2002.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="service-content">
-            <h3>IT Support</h3>
-            <p>Comprehensive IT support services.</p>
+    <div class="banner">
+        <h1 class="animation" onclick="location.reload();">Dellyck Limited<img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Logo" class="spinning-logo"></h1>
+        <p>Empowering Your Business with Innovative Solutions</p>
+        <img src="https://cdn-icons-png.flaticon.com/128/5460/5460815.png" alt="Toggle Dark Mode" class="icon dark-mode-icon" onclick="toggleDarkMode()">
+        <div class="hamburger" onclick="toggleMenu()">
+            <img src="https://cdn-icons-png.flaticon.com/128/17962/17962375.png" alt="Menu" class="hamburger-icon">
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </div>
-    <div class="service">
-        <video autoplay loop muted playsinline>
-            <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2003.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="service-content">
-            <h3>Web Design</h3>
-            <p>Professional web design services.</p>
+
+    <div class="content">
+        <h2 class="cards-title">Our Products</h2>
+        <div class="product">
+            <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/signup.PNG?raw=true" alt="Signup Page">
+            <div class="product-content">
+                <h3>Signup Page</h3>
+                <p>This image shows the signup page being coded in the Android emulator. It's an essential step for user authentication in mobile applications.</p>
+            </div>
         </div>
-    </div>
-    <div class="service">
-        <video autoplay loop muted playsinline>
-            <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2004.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="service-content">
-            <h3>App Development</h3>
-            <p>Custom mobile app development.</p>
+        <div class="product">
+            <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/another.PNG?raw=true" alt="Home Page">
+            <div class="product-content">
+                <h3>Home Page</h3>
+                <p>The home page of the transactions app displays all features. It acts as the main dashboard for users to navigate through the app.</p>
+            </div>
         </div>
-    </div>
-    <div class="service">
-        <video autoplay loop muted playsinline>
-            <source src="https://www.theuxda.com/storage/app/media/blog/Videos/Light%20Bank/UXDA%20light%20bank%20case%20study%2001.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="service-content">
-            <h3>Cloud Solutions</h3>
-            <p>Scalable and secure cloud solutions.</p>
+        <div class="product">
+            <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/phone%20signup.png?raw=true" alt="Login Page">
+            <div class="product-content">
+                <h3>Login Page</h3>
+                <p>This standalone screenshot of a phone shows the login page. It's crucial for securing access to user accounts and data.</p>
+            </div>
         </div>
+        <div class="product">
+            <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/installing.PNG?raw=true" alt="App Installation">
+            <div class="product-content">
+                <h3>App Installation</h3>
+                <p>This image shows the app being installed in the emulator. It highlights the installation process, ensuring the app works correctly.</p>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/best%20white.PNG?raw=true" alt="White Font Image">
+            <div class="product-content">
+                <h3>White Font Image</h3>
+                <p>This image features white font, emphasizing clarity and readability in design.</p>
+            </div>
+        </div>
+
+        <h2 class="cards-title">Connect With Us</h2>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/iam__kingderrick/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" class="animated-icon">
+            </a>
+            <a href="https://x.com/jerrick_kent/?mx=2" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="Twitter" class="animated-icon">
+            </a>
+            <a href="https://www.tiktok.com/@king_smilee" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/3046/3046120.png" alt="TikTok" class="animated-icon">
+            </a>
+        </div>
+
+        <footer class="footer">
+            <p>© 2025 Dellyck Limited. All rights reserved.</p>
+        </footer>
     </div>
 
     <script>
-        const videos = document.querySelectorAll('video');
+        function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
 
-        videos.forEach(video => {
-            video.addEventListener('click', () => {
+        function closeMenu() {
+            var menu = document.getElementById("navMenu");
+            menu.style.display = "none";
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            var elements = document.querySelectorAll('.banner, .nav-menu, .icon, .hamburger-icon, .cards-title, .card-content, .social-icons img');
+            elements.forEach(function(element) {
+                element.classList.toggle('dark-mode');
+            });
+        }
+
+        document.addEventListener('click', function(event) {
+            var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.querySelector('.nav-menu').contains(event.target);
+
+            if (!isClickInside) {
+                closeMenu();
+            }
+        });
+
+        const images = document.querySelectorAll('.product img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
                 if (!document.fullscreenElement) {
-                    video.requestFullscreen().catch(err => {
+                    img.requestFullscreen().catch(err => {
                         console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
                     });
                 } else {
@@ -123,11 +270,11 @@
                 }
             });
 
-            video.addEventListener('fullscreenchange', (event) => {
+            img.addEventListener('fullscreenchange', (event) => {
                 if (document.fullscreenElement) {
-                    video.classList.add('fullscreen');
+                    img.classList.add('fullscreen');
                 } else {
-                    video.classList.remove('fullscreen');
+                    img.classList.remove('fullscreen');
                 }
             });
         });
