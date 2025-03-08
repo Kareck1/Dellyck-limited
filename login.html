@@ -5,94 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: #333;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <div class="login-container">
         <h1>Login</h1>
-        <form action="index.html" method="POST" id="loginForm" onsubmit="return validateLogin()">
+        <form id="loginForm">
             <input type="text" id="loginUsername" name="username" placeholder="Enter Username" required><br>
             <input type="password" id="loginPassword" name="password" placeholder="Enter Password" required><br>
             <button type="submit">Login</button>
         </form>
+        <p id="errorMessage" style="color:red; display:none;">Incorrect username or password.</p>
     </div>
 
     <script>
-        // Here we simulate a simple login check
-        function validateLogin() {
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
             const username = document.getElementById('loginUsername').value;
             const password = document.getElementById('loginPassword').value;
-            
-            // You can replace this with actual authentication logic
-            if (username === "testUser" && password === "testPassword") {
-                // Redirect to main page if login is successful
-                window.location.href = "index.html";
+
+            // Get stored cookies (credentials)
+            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                const [key, value] = cookie.trim().split('=');
+                acc[key] = value;
+                return acc;
+            }, {});
+
+            const storedUsername = cookies['username'];
+            const storedPassword = cookies['password'];
+
+            // Check if credentials match
+            if (username === storedUsername && password === storedPassword) {
+                // Set a login cookie to track that the user is logged in
+                document.cookie = `isLoggedIn=true; path=/;`;
+
+                // Redirect to index.html
+                window.location.href = 'index.html';
             } else {
-                alert("Incorrect credentials. Please try again.");
-                return false; // Prevent form submission
+                // Show error message if credentials don't match
+                document.getElementById('errorMessage').style.display = 'block';
             }
-        }
+        });
     </script>
 
 </body>
