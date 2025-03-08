@@ -17,6 +17,49 @@ body {
 
 
 
+/* General button style */
+button {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  outline: none;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Signup button specific styles */
+.signup-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-btn:active {
+  transform: translateY(2px);
+}
+
+/* Login button specific styles */
+.login-btn {
+  background-color: #007BFF;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:active {
+  transform: translateY(2px);
+}
 
 
 
