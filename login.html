@@ -3,158 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Dellyck Limited</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
         }
 
-        .login-container {
-            background-color: white;
-            padding: 30px;
+        .signup-container {
+            background: #fff;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
             margin-bottom: 20px;
-            animation: spinLogo 2s linear infinite;
-        }
-
-        h2 {
-            margin: 20px 0;
+            font-size: 2rem;
             color: #333;
-            font-size: 24px;
         }
 
-        .input-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .input-group input {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin-top: 5px;
+            margin: 10px 0;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.3s;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
 
-        .input-group input:focus {
-            border-color: #3498db;
-        }
-
-        .btn-login {
+        button {
             width: 100%;
-            padding: 12px;
-            background-color: #3498db;
-            border: none;
-            border-radius: 5px;
+            padding: 10px;
+            background-color: #4CAF50;
             color: white;
-            font-size: 18px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 16px;
         }
 
-        .btn-login:hover {
-            background-color: #2980b9;
+        button:hover {
+            background-color: #45a049;
         }
 
-        .signup-link {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .signup-link a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        /* Animation for logo spinning */
-        @keyframes spinLogo {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Animation for container fade-in */
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="login-container">
-        <!-- Logo with Animation -->
-        <img src="https://cdn-icons-png.flaticon.com/128/104/104109.png" alt="Dellyck Logo" class="logo">
-        
-        <h2>Login to Dellyck Limited</h2>
-        
-        <form action="login.php" method="POST" onsubmit="return validateLogin()">
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
-            </div>
-            
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter your password">
-            </div>
-            
-            <button type="submit" class="btn-login">Login</button>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form action="login.html" method="POST" id="signupForm">
+            <input type="text" id="username" name="username" placeholder="Enter Username" required><br>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required><br>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required><br>
+            <button type="submit">Sign Up</button>
         </form>
-
-        <div class="signup-link">
-            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
-        </div>
     </div>
 
-    <script>
-        // You can add additional logic here if necessary
-        function validateLogin() {
-            // Example of a basic validation. 
-            // You can enhance this by checking the email format or making an AJAX call to check credentials.
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-
-            if (!email || !password) {
-                alert("Please fill in both fields.");
-                return false; // prevent form submission
-            }
-            // Simulate login success (for demonstration)
-            alert("Login successful!");
-            window.location.href = "index.html"; // Redirect to the main page
-            return false; // prevent actual form submission for demo
-        }
-    </script>
 </body>
 </html>
-
