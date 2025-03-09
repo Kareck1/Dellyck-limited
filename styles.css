@@ -19,7 +19,7 @@ body {
 
 /* General button style */
 button {
-  padding: 3px 30px;
+  padding: 2px 30px;
   font-size: 16px;
   font-weight: bold;
   border: none;
@@ -42,7 +42,7 @@ button {
 }
 
 .signup-btn:active {
-  transform: translateY(2px);
+  transform: translateY(5px);
 }
 
 /* Login button specific styles */
@@ -255,10 +255,10 @@ body.dark-mode .expand-dark-mode {
 }
 
 .background-video {
-    width: 100%;
+    width: -100%;
     height: auto;
     max-height: 100vh; /* Ensures the video fits within the viewport height */
-    display: block;
+    display: viewport;
     margin: 0 auto; /* Centers the video */
     border-radius: 15px; /* Adjust this value to make the edges more or less rounded */
     pointer-events: none; /* Disable click interactions */
