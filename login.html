@@ -4,7 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Resetting some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f7f8fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for the login form */
+        .login-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-out;
+            text-align: center;
+        }
+
+        /* Title styling */
+        .login-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4e4e4e;
+            font-weight: bold;
+        }
+
+        /* Form styling */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .login-form input {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .login-form input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .login-btn {
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            display: none;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Redirect text (Sign Up or Login) */
+        .redirect-text {
+            font-size: 1rem;
+            color: #4e4e4e;
+            margin-top: 20px;
+        }
+
+        .redirect-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .redirect-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes buttonHover {
+            0% {
+                background-color: #007bff;
+            }
+            100% {
+                background-color: #0056b3;
+            }
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+
+            .login-title {
+                font-size: 1.6rem;
+            }
+
+            .login-form input {
+                font-size: 0.9rem;
+            }
+
+            .login-btn {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +152,7 @@
         <p id="errorMessage" class="error-message">Incorrect username or password.</p>
         <p class="redirect-text">
             Don't have an account? 
-            <a href="index.html" class="redirect-link">Sign Up</a>
+            <a href="signup.html" class="redirect-link">Sign Up</a>
         </p>
     </div>
 
