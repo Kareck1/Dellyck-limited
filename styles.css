@@ -230,7 +230,7 @@ html, body {
     width: 30px;
     height: 30px;
     margin-left: 10px;
-    animation: spin 10s linear infinite;
+    animation: spin 01s linear infinite;
     vertical-align: middle;
 }
 @keyframes spin {
