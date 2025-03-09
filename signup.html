@@ -9,13 +9,17 @@
 <body>
 
     <div class="signup-container">
-        <h1>Sign Up</h1>
-        <form id="signupForm">
-            <input type="text" id="username" name="username" placeholder="Enter Username" required><br>
-            <input type="email" id="email" name="email" placeholder="Enter Email" required><br>
-            <input type="password" id="password" name="password" placeholder="Enter Password" required><br>
-            <button type="submit">Sign Up</button>
+        <h1 class="signup-title">Sign Up</h1>
+        <form id="signupForm" class="signup-form">
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <button type="submit" class="signup-btn">Sign Up</button>
         </form>
+        <p class="redirect-text">
+            Already have an account? 
+            <a href="login.html" class="redirect-link">Login</a>
+        </p>
     </div>
 
     <script>
