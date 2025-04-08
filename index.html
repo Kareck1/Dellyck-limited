@@ -1,43 +1,128 @@
-
-<!-- Hovering Upper Left Logo -->
-<div class="hovering-upper-logo" onclick="window.location.href='index.html';">
+<!-- Hovering Circular Logo -->
+<div id="circular-logo" class="circular-logo" onclick="animateOnClick();">
     <img src="https://github.com/Kareck1/Dellyck-limited/blob/main/logo.png?raw=true" alt="Dellyck Limited Logo">
 </div>
 
 <!-- CSS Styling -->
 <style>
-    /* Hovering Upper Left Logo */
-    .hovering-upper-logo {
+    /* Hovering Circular Logo */
+    .circular-logo {
         position: fixed;
-        top: 20px; /* Distance from the top */
-        left: 20px; /* Distance from the left */
-        width: 80px; /* Adjust size of the logo */
-        height: auto;
-        background-color: #fff; /* Optional background color */
-        border: 2px solid #333;
-        border-radius: 50%; /* Rounded design (optional) */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Drop shadow for style */
+        top: 20px;
+        left: 20px;
+        width: 80px; /* Default size */
+        height: 80px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         z-index: 1000;
-        transition: transform 0.3s, box-shadow 0.3s;
+        animation: pulse 2s infinite;
+        transition: all 0.3s ease;
     }
 
     /* Logo Image */
-    .hovering-upper-logo img {
-        width: 100%; /* Make the logo fit inside */
+    .circular-logo img {
+        width: 90%;
         height: auto;
-        border-radius: 50%; /* Matches the container's shape */
+        border-radius: 50%;
     }
 
-    /* Hover Effects */
-    .hovering-upper-logo:hover {
-        transform: scale(1.1); /* Enlarges slightly on hover */
-        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+    /* Click Animation */
+    @keyframes clickAnimation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* Pulsing Animation */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    /* Hidden State */
+    .hide {
+        opacity: 0;
+        pointer-events: none; /* Temporarily disable interaction */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .circular-logo {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .circular-logo {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .circular-logo {
+            width: 50px;
+            height: 50px;
+            top: 10px;
+            left: 10px;
+        }
     }
 </style>
+
+<!-- JavaScript for Animation and Scroll Behavior -->
+<script>
+    // Click Animation
+    function animateOnClick() {
+        const logo = document.getElementById('circular-logo');
+        logo.style.animation = "clickAnimation 0.5s";
+        setTimeout(() => {
+            logo.style.animation = "pulse 2s infinite"; // Reset to pulsing animation
+        }, 500);
+    }
+
+    // Hide-and-Show on Scroll
+    let lastScrollY = window.scrollY;
+    const logo = document.getElementById('circular-logo');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            // Scrolling down
+            logo.classList.add('hide');
+        } else {
+            // Scrolling up
+            logo.classList.remove('hide');
+        }
+
+        lastScrollY = window.scrollY;
+
+        // Delay reappearance for clarity
+        setTimeout(() => {
+            logo.classList.remove('hide');
+        }, 1000);
+    });
+</script>
 
 
 
@@ -59,12 +144,19 @@
     <title>Animated Buttons</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="button-container">
-        <button class="signup-btn" onclick="window.location.href='signup.html';">Signup</button>
-        <button class="login-btn" onclick="window.location.href='login.html';">Login</button>
-    </div>
-</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
